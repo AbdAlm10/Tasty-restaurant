@@ -1,14 +1,15 @@
-import { Box, HStack, Image, Show, Text } from "@chakra-ui/react";
+import { Box, Hide, HStack, Image, Show, Text } from "@chakra-ui/react";
 import logo from "../assets/Restaurant.webp";
 import { FaBars, FaCartShopping } from "react-icons/fa6";
 import { ImSearch } from "react-icons/im";
+import colors from "../assets/colors/colors";
 
 const NavBar = () => {
   return (
     <HStack bg="white" justifyContent="space-between" p={5}>
-      <Show breakpoint="(max-width: 500px)">
-        <FaBars color="#773200" />
-      </Show>
+      <Hide above="md">
+        <FaBars color={colors.mainColor1} />
+      </Hide>
       <Image
         src={logo}
         alt="Logo"
@@ -17,7 +18,7 @@ const NavBar = () => {
       />
 
       <Show above="md">
-        <HStack color="#773200" whiteSpace="nowrap" ml={4} p={2}>
+        <HStack color={colors.mainColor1} whiteSpace="nowrap" ml={4} p={2}>
           <Text fontWeight="500">Home</Text>
           <Text ml={4}>Food Menu</Text>
           <Text ml={4}>Latest Blog</Text>
@@ -26,9 +27,9 @@ const NavBar = () => {
       </Show>
 
       <HStack>
-        <FaCartShopping color="#773200" size={20} />
+        <FaCartShopping color={colors.mainColor1} size={20} />
         <Box ml={1}>
-          <ImSearch color="#773200" size={15} />
+          <ImSearch color={colors.mainColor1} size={15} />
         </Box>
       </HStack>
     </HStack>
