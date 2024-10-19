@@ -1,11 +1,7 @@
-import { Center, Text } from "@chakra-ui/react";
+import HomePage from "./pages/HomePage";
 
 const App = () => {
-  return (
-    <Center>
-      <Text>Hello world</Text>
-    </Center>
-  );
+  return <HomePage />;
 };
 
 export default App;
