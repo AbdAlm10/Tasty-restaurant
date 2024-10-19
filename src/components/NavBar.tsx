@@ -1,8 +1,9 @@
-import { Box, Hide, HStack, Image, Show, Text } from "@chakra-ui/react";
+import { Box, Hide, HStack, Image, Show } from "@chakra-ui/react";
 import logo from "../assets/Restaurant.webp";
 import { FaBars, FaCartShopping } from "react-icons/fa6";
 import { ImSearch } from "react-icons/im";
 import colors from "../assets/colors/colors";
+import NavBarPageTitles from "./NavBarPageTitles";
 
 const NavBar = () => {
   return (
@@ -18,11 +19,11 @@ const NavBar = () => {
       />
 
       <Show above="md">
-        <HStack color={colors.mainColor1} whiteSpace="nowrap" ml={4} p={2}>
-          <Text fontWeight="500">Home</Text>
-          <Text ml={4}>Food Menu</Text>
-          <Text ml={4}>Latest Blog</Text>
-          <Text ml={4}>Contact</Text>
+        <HStack>
+          <NavBarPageTitles>Home</NavBarPageTitles>
+          <NavBarPageTitles>Food Menu</NavBarPageTitles>
+          <NavBarPageTitles>Latest Blog</NavBarPageTitles>
+          <NavBarPageTitles>Contact</NavBarPageTitles>
         </HStack>
       </Show>
 
