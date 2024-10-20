@@ -23,13 +23,14 @@ import {
 } from "@chakra-ui/react";
 import DrawerPageName from "./DrawerPageName";
 import ContactBoxContainer from "./ContactBoxContainer";
+import { Link } from "react-router-dom";
 
 const NavbarDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
-      <Button _hover={{ bg: "white" }} bg="white" onClick={onOpen}>
+      <Button _hover={{ bg: "white" }} bg="white" onClick={onOpen} p={0}>
         <FaBars size={20} color={colors.mainColor1} />
       </Button>
 
@@ -49,10 +50,18 @@ const NavbarDrawer = () => {
 
           <DrawerBody color={colors.mainColor1} fontWeight={600}>
             <Box>
-              <DrawerPageName>Home</DrawerPageName>
-              <DrawerPageName>Food Menu</DrawerPageName>
-              <DrawerPageName>Latest Blog</DrawerPageName>
-              <DrawerPageName>Contact</DrawerPageName>
+              <Link to={"/"}>
+                <DrawerPageName>Home</DrawerPageName>
+              </Link>
+              <Link to={"FoodMenu/"}>
+                <DrawerPageName>Food Menu</DrawerPageName>
+              </Link>
+              <Link to={"LatestBlog/"}>
+                <DrawerPageName>Latest Blog</DrawerPageName>
+              </Link>
+              <Link to={"Contact/"}>
+                <DrawerPageName>Contact</DrawerPageName>
+              </Link>
             </Box>
 
             <Box mt={10}>

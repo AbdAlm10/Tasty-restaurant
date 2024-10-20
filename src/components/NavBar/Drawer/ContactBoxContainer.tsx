@@ -3,6 +3,7 @@ import { FiPhone, FiShoppingCart } from "react-icons/fi";
 import { LuClock4 } from "react-icons/lu";
 import { MdOutlineEmail, MdOutlinePlace } from "react-icons/md";
 import colors from "../../../assets/colors/colors";
+import { Link } from "react-router-dom";
 
 const ContactBoxContainer = () => {
   return (
@@ -32,17 +33,21 @@ const ContactBoxContainer = () => {
       </HStack>
 
       <Center>
-        <Button
-          _hover={"none"}
-          _active={{ bg: "#773200" }}
-          bg={colors.mainColor2}
-          color="white"
-          w="100%"
-          mt={2}
-        >
-          <FiShoppingCart />
-          <Text ml={3}>Order now</Text>
-        </Button>
+        <Box w="100%">
+          <Link to={"FoodMenu/"}>
+            <Button
+              _hover={"none"}
+              _active={{ bg: "#773200" }}
+              bg={colors.mainColor2}
+              color="white"
+              mt={2}
+              w="100%"
+            >
+              <FiShoppingCart />
+              <Text ml={3}>Order now</Text>
+            </Button>
+          </Link>
+        </Box>
       </Center>
     </Box>
   );

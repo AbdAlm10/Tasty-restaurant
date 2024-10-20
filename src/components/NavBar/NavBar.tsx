@@ -5,10 +5,11 @@ import { ImSearch } from "react-icons/im";
 import colors from "../../assets/colors/colors";
 import NavBarPageTitles from "../NavBar/NavBarPageTitles";
 import NavbarDrawer from "./Drawer/NavbarDrawer";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <HStack bg="white" justifyContent="space-between" p={5}>
+    <HStack bg="white" justifyContent="space-between" p={3}>
       <Hide above="md">
         <NavbarDrawer />
       </Hide>
@@ -21,10 +22,18 @@ const NavBar = () => {
 
       <Show above="md">
         <HStack>
-          <NavBarPageTitles>Home</NavBarPageTitles>
-          <NavBarPageTitles>Food Menu</NavBarPageTitles>
-          <NavBarPageTitles>Latest Blog</NavBarPageTitles>
-          <NavBarPageTitles>Contact</NavBarPageTitles>
+          <Link to={"/"}>
+            <NavBarPageTitles>Home</NavBarPageTitles>
+          </Link>
+          <Link to={"FoodMenu/"}>
+            <NavBarPageTitles>Food Menu</NavBarPageTitles>
+          </Link>
+          <Link to={"LatestBlog/"}>
+            <NavBarPageTitles>Latest Blog</NavBarPageTitles>
+          </Link>
+          <Link to={"Contact/"}>
+            <NavBarPageTitles>Contact</NavBarPageTitles>
+          </Link>
         </HStack>
       </Show>
 
