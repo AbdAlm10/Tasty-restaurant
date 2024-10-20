@@ -1,15 +1,16 @@
 import { Box, Hide, HStack, Image, Show } from "@chakra-ui/react";
-import logo from "../assets/Restaurant.webp";
-import { FaBars, FaCartShopping } from "react-icons/fa6";
+import logo from "../../assets/Restaurant.webp";
+import { FaCartShopping } from "react-icons/fa6";
 import { ImSearch } from "react-icons/im";
-import colors from "../assets/colors/colors";
-import NavBarPageTitles from "./NavBarPageTitles";
+import colors from "../../assets/colors/colors";
+import NavBarPageTitles from "../NavBar/NavBarPageTitles";
+import NavbarDrawer from "./Drawer/NavbarDrawer";
 
 const NavBar = () => {
   return (
     <HStack bg="white" justifyContent="space-between" p={5}>
       <Hide above="md">
-        <FaBars color={colors.mainColor1} />
+        <NavbarDrawer />
       </Hide>
       <Image
         src={logo}
