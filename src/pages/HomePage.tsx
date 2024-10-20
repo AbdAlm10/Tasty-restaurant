@@ -1,7 +1,7 @@
-import NavBar from "../components/NavBar/NavBar";
+import { Text } from "@chakra-ui/react";
 
 const HomePage = () => {
-  return <NavBar />;
+  return <Text>homePage</Text>;
 };
 
 export default HomePage;

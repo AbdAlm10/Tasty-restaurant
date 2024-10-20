@@ -14,6 +14,7 @@ const NavBar = () => {
         <NavbarDrawer />
       </Hide>
       <Image
+        ml={{ base: 0, md: "100px" }}
         src={logo}
         alt="Logo"
         w={{ base: "75px", md: "100px" }}
@@ -37,9 +38,9 @@ const NavBar = () => {
         </HStack>
       </Show>
 
-      <HStack>
+      <HStack spacing={6} mr={{ base: 0, md: "50px" }}>
         <FaCartShopping color={colors.mainColor1} size={20} />
-        <Box ml={1}>
+        <Box>
           <ImSearch color={colors.mainColor1} size={15} />
         </Box>
       </HStack>

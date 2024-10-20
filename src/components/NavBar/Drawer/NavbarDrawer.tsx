@@ -74,28 +74,28 @@ const NavbarDrawer = () => {
               <HStack spacing={10}>
                 <Box
                   _hover={{
-                    color: "#ed751c",
+                    color: colors.mainColor2,
                   }}
                 >
                   <FaFacebookF size={25} />
                 </Box>
                 <Box
                   _hover={{
-                    color: "#ed751c",
+                    color: colors.mainColor2,
                   }}
                 >
                   <FaTwitter size={25} />
                 </Box>
                 <Box
                   _hover={{
-                    color: "#ed751c",
+                    color: colors.mainColor2,
                   }}
                 >
                   <FaYoutube size={25} />
                 </Box>
                 <Box
                   _hover={{
-                    color: "#ed751c",
+                    color: colors.mainColor2,
                   }}
                 >
                   <FaLinkedin size={25} />
