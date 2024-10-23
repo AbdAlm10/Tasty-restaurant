@@ -63,7 +63,7 @@ const Slide = () => {
                 Welcome to our restaurant
               </Text>
               <Heading
-                color={colors.mainColor1}
+                color={"black.800"}
                 fontSize={{ base: 70, md: 85, lg: 95 }}
               >
                 {slider[index].text}
