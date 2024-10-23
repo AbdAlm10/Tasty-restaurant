@@ -1,9 +1,9 @@
-import { Box, Button, Center, Heading, HStack, Text } from "@chakra-ui/react";
-import { FiPhone, FiShoppingCart } from "react-icons/fi";
+import { Box, Heading, HStack, Text } from "@chakra-ui/react";
+import { FiPhone } from "react-icons/fi";
 import { LuClock4 } from "react-icons/lu";
 import { MdOutlineEmail, MdOutlinePlace } from "react-icons/md";
 import colors from "../../../assets/colors/colors";
-import { Link } from "react-router-dom";
+import OrderButton from "./OrderButton";
 
 const ContactBoxContainer = () => {
   return (
@@ -32,23 +32,7 @@ const ContactBoxContainer = () => {
         <Text>+11002345909</Text>
       </HStack>
 
-      <Center>
-        <Box w="100%">
-          <Link to={"FoodMenu/"}>
-            <Button
-              _hover={"none"}
-              _active={{ bg: "#773200" }}
-              bg={colors.mainColor2}
-              color="white"
-              mt={2}
-              w="100%"
-            >
-              <FiShoppingCart />
-              <Text ml={3}>Order now</Text>
-            </Button>
-          </Link>
-        </Box>
-      </Center>
+      <OrderButton width={"100%"} />
     </Box>
   );
 };

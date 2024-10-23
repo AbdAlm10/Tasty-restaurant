@@ -7,7 +7,7 @@ interface Props {
 
 const NavBarPageTitles = ({ children }: Props) => {
   return (
-    <Text ml={4} color={colors.mainColor1} whiteSpace="nowrap" fontWeight="500">
+    <Text ml={4} color={colors.mainColor1} whiteSpace="nowrap" fontWeight="700">
       {children}
     </Text>
   );

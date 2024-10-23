@@ -6,7 +6,7 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 import colors from "../../../assets/colors/colors";
-import logo from "../../../assets/Restaurant.webp";
+import logo from "../../../assets/images/Restaurant.webp";
 import {
   Box,
   Button,

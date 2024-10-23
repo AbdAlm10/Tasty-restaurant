@@ -1,7 +1,7 @@
-import { Text } from "@chakra-ui/react";
+import Slide from "../components/Slide";
 
 const HomePage = () => {
-  return <Text>homePage</Text>;
+  return <Slide />;
 };
 
 export default HomePage;
