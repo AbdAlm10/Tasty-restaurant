@@ -7,14 +7,15 @@ import {
   Show,
   Text,
 } from "@chakra-ui/react";
+import { animated, useSpring } from "@react-spring/web";
+import { useEffect, useState } from "react";
+import colors from "../assets/colors/colors";
 import image from "../assets/images/HeroBackground.jpeg";
 import burgar from "../assets/images/burgar.png";
 import pizza from "../assets/images/pizza.png";
 import rize from "../assets/images/rize.png";
-import colors from "../assets/colors/colors";
+import pasta from "../assets/images/pasta.png";
 import OrderButton from "./NavBar/Drawer/OrderButton";
-import { animated, useSpring } from "@react-spring/web";
-import { useState, useEffect } from "react";
 
 const Slide = () => {
   const [index, setIndex] = useState(0);
@@ -22,6 +23,7 @@ const Slide = () => {
     { src: pizza, text: "Seasons Pizza Italian Style" },
     { src: burgar, text: "Burger King with multiple toppings" },
     { src: rize, text: "Arabic steamed rice dish" },
+    { src: pasta, text: "deltion pasta ........................." },
   ];
 
   // Fade-in animation for the images and text
@@ -51,19 +53,19 @@ const Slide = () => {
       backgroundSize="cover"
     >
       <animated.div style={props}>
-        <Flex p={10} justify="space-between" align="center">
+        <Flex p={10} align="center">
           <Center>
             <Box ml={3}>
               <Text
                 fontSize={20}
                 fontWeight={500}
-                color={colors.mainColor2}
+                color={colors.mainYello}
                 mb={4}
               >
                 Welcome to our restaurant
               </Text>
               <Heading
-                color={"black.800"}
+                color={{ base: "white", md: "blackAlpha.800" }}
                 fontSize={{ base: 70, md: 85, lg: 95 }}
               >
                 {slider[index].text}

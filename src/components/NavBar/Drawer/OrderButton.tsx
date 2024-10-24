@@ -15,7 +15,7 @@ const OrderButton = ({ width }: Props) => {
           <Button
             _hover={"none"}
             _active={{ bg: "#773200" }}
-            bg={colors.mainColor2}
+            bg={colors.mainYello}
             color="white"
             mt={2}
             w="100%"

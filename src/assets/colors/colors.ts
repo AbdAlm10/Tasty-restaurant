@@ -1,4 +1,6 @@
 export default {
-  mainColor1: "#773200", //brown
-  mainColor2: "#ed751c", //yellwo
+  mainBrown: "#773200", //brown
+  mainYello: "#ed751c", //yellwo
+  beige: "#f4f1ea",
+  black: "blackAlpha.800",
 };

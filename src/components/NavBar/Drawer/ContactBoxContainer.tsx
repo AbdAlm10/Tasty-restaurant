@@ -13,22 +13,22 @@ const ContactBoxContainer = () => {
       </Heading>
 
       <HStack mb={4}>
-        <MdOutlinePlace color={colors.mainColor2} />
+        <MdOutlinePlace color={colors.mainYello} />
         <Text>Main Street, Melbourne, Australia</Text>
       </HStack>
 
       <HStack mb={4}>
-        <MdOutlineEmail color={colors.mainColor2} />
+        <MdOutlineEmail color={colors.mainYello} />
         <Text>info@fresheat.com</Text>
       </HStack>
 
       <HStack mb={4}>
-        <LuClock4 color={colors.mainColor2} />
+        <LuClock4 color={colors.mainYello} />
         <Text>Mod-friday, 09am -05pm</Text>
       </HStack>
 
       <HStack mb={4}>
-        <FiPhone color={colors.mainColor2} />
+        <FiPhone color={colors.mainYello} />
         <Text>+11002345909</Text>
       </HStack>
 

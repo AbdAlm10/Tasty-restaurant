@@ -31,7 +31,7 @@ const NavbarDrawer = () => {
   return (
     <>
       <Button _hover={{ bg: "white" }} bg="white" onClick={onOpen} p={0}>
-        <FaBars size={20} color={colors.mainColor1} />
+        <FaBars size={20} color={colors.mainBrown} />
       </Button>
 
       <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
@@ -40,7 +40,7 @@ const NavbarDrawer = () => {
         <DrawerContent>
           <Box p={3}>
             <DrawerCloseButton
-              bg={colors.mainColor2}
+              bg={colors.mainYello}
               color="white"
               my={5}
               borderRadius={20}
@@ -48,7 +48,7 @@ const NavbarDrawer = () => {
             <Image w="100px" h="55px" src={logo} />
           </Box>
 
-          <DrawerBody color={colors.mainColor1} fontWeight={600}>
+          <DrawerBody color={colors.mainBrown} fontWeight={600}>
             <Box>
               <Link to={"/"}>
                 <DrawerPageName>Home</DrawerPageName>
@@ -70,32 +70,32 @@ const NavbarDrawer = () => {
           </DrawerBody>
 
           <Center>
-            <DrawerFooter color={colors.mainColor1}>
+            <DrawerFooter color={colors.mainBrown}>
               <HStack spacing={10}>
                 <Box
                   _hover={{
-                    color: colors.mainColor2,
+                    color: colors.mainYello,
                   }}
                 >
                   <FaFacebookF size={25} />
                 </Box>
                 <Box
                   _hover={{
-                    color: colors.mainColor2,
+                    color: colors.mainYello,
                   }}
                 >
                   <FaTwitter size={25} />
                 </Box>
                 <Box
                   _hover={{
-                    color: colors.mainColor2,
+                    color: colors.mainYello,
                   }}
                 >
                   <FaYoutube size={25} />
                 </Box>
                 <Box
                   _hover={{
-                    color: colors.mainColor2,
+                    color: colors.mainYello,
                   }}
                 >
                   <FaLinkedin size={25} />

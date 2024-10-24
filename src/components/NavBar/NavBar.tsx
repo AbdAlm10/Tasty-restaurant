@@ -39,9 +39,9 @@ const NavBar = () => {
       </Show>
 
       <HStack spacing={6} mr={{ base: 0, md: "50px" }}>
-        <FaCartShopping color={colors.mainColor1} size={20} />
+        <FaCartShopping color={colors.mainBrown} size={20} />
         <Box>
-          <ImSearch color={colors.mainColor1} size={15} />
+          <ImSearch color={colors.mainBrown} size={15} />
         </Box>
       </HStack>
     </HStack>
