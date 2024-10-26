@@ -14,19 +14,11 @@ import {
 import colors from "../assets/colors/colors";
 import { FaHeart } from "react-icons/fa6";
 import foodItems from "../data/FoodItems";
-import { useState } from "react";
 import OrderButton from "./NavBar/Drawer/OrderButton";
+import useLike from "../hooks/useLike";
 
 const PopularFood = () => {
-  const [likedItems, setLikedItems] = useState(
-    foodItems.map((item) => item.liked)
-  );
-
-  const toggleLike = (index: number) => {
-    const updatedLikes = [...likedItems];
-    updatedLikes[index] = !updatedLikes[index];
-    setLikedItems(updatedLikes);
-  };
+  const { toggleLike, likedItems } = useLike();
 
   return (
     <VStack my={20}>
