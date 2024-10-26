@@ -70,8 +70,13 @@ const Slide = () => {
               >
                 {slider[index].text}
               </Heading>
-              <Box display="inline-block" mt={5}>
-                <OrderButton />
+              <Box display="inline-block" mt={7}>
+                <OrderButton
+                  color="white"
+                  width="100%"
+                  hover={"none"}
+                  active={{ bg: "#773200" }}
+                />
               </Box>
             </Box>
           </Center>

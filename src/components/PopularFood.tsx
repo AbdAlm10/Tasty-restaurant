@@ -12,9 +12,10 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import colors from "../assets/colors/colors";
-import { FaCartShopping, FaHeart } from "react-icons/fa6";
+import { FaHeart } from "react-icons/fa6";
 import foodItems from "../data/FoodItems";
 import { useState } from "react";
+import OrderButton from "./NavBar/Drawer/OrderButton";
 
 const PopularFood = () => {
   const [likedItems, setLikedItems] = useState(
@@ -26,6 +27,7 @@ const PopularFood = () => {
     updatedLikes[index] = !updatedLikes[index];
     setLikedItems(updatedLikes);
   };
+
   return (
     <VStack my={20}>
       <VStack fontWeight="bold" fontSize={20}>
@@ -57,9 +59,9 @@ const PopularFood = () => {
             </CardBody>
             <CardFooter mt={-5}>
               <ButtonGroup>
-                <Button leftIcon={<FaCartShopping />}>Order Now</Button>
+                <OrderButton color={colors.black} hover="none" />
                 <Button
-                  color={likedItems[index] ? colors.black : colors.mainYello}
+                  color={likedItems[index] ? colors.mainYello : colors.black}
                   onClick={() => toggleLike(index)}
                 >
                   <FaHeart />
