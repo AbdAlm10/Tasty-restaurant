@@ -14,8 +14,18 @@ import {
 import colors from "../assets/colors/colors";
 import { FaCartShopping, FaHeart } from "react-icons/fa6";
 import foodItems from "../data/FoodItems";
+import { useState } from "react";
 
 const PopularFood = () => {
+  const [likedItems, setLikedItems] = useState(
+    foodItems.map((item) => item.liked)
+  );
+
+  const toggleLike = (index: number) => {
+    const updatedLikes = [...likedItems];
+    updatedLikes[index] = !updatedLikes[index];
+    setLikedItems(updatedLikes);
+  };
   return (
     <VStack my={20}>
       <VStack fontWeight="bold" fontSize={20}>
@@ -24,8 +34,8 @@ const PopularFood = () => {
       </VStack>
 
       <HStack spacing={8}>
-        {foodItems.map((item, idx) => (
-          <Card key={`duplicate-${idx}`} my={10}>
+        {foodItems.map((item, index) => (
+          <Card key={`duplicate-${index}`} my={10}>
             <CardBody
               display="flex"
               flexDirection="column"
@@ -48,7 +58,10 @@ const PopularFood = () => {
             <CardFooter mt={-5}>
               <ButtonGroup>
                 <Button leftIcon={<FaCartShopping />}>Order Now</Button>
-                <Button>
+                <Button
+                  color={likedItems[index] ? colors.black : colors.mainYello}
+                  onClick={() => toggleLike(index)}
+                >
                   <FaHeart />
                 </Button>
               </ButtonGroup>
