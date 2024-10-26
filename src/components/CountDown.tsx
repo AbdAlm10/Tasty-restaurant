@@ -1,36 +1,32 @@
-import { Box, Image, SimpleGrid, GridItem } from "@chakra-ui/react";
-import image from "../assets/images/countDownBG.png";
-import timerThumb from "../assets/images/timerThumb.png";
+import { Box, Heading, Text } from "@chakra-ui/react";
+import colors from "../assets/colors/colors";
+import useCountDown from "../hooks/useCountDown";
 
-const CountDown = () => {
+interface CountDownProps {
+  date: Date;
+}
+
+const CountDown: React.FC<CountDownProps> = ({ date }) => {
+  const countdown = useCountDown(date);
+
   return (
     <Box
-      w="100%"
-      h={{ base: "650px", md: "800px", lg: "550px" }}
-      display={{ base: "inline-block", md: "flex" }}
-      justifyContent="center"
-      backgroundImage={image}
-      backgroundSize="cover"
-      p={{ base: 5, lg: 10 }}
+      ml={{ lg: 10 }}
+      p={5}
+      alignItems="center"
+      textAlign="center"
+      bg={colors.beige}
+      maxW="500px"
+      h="250px"
+      borderRadius="30px"
     >
-      <SimpleGrid alignItems="center" columns={{ md: 1, lg: 2 }}>
-        <GridItem justifyContent="center" display="flex">
-          <Box boxSize={{ base: 300, md: 400, lg: 500 }}>
-            <Image alt="Food image" src={timerThumb} />
-          </Box>
-        </GridItem>
-
-        <GridItem ml={{ lg: 10 }}>
-          <Box
-            bg={"white"}
-            maxW="400px"
-            h={{ base: "300px" }}
-            borderRadius="30px"
-          >
-            lk
-          </Box>
-        </GridItem>
-      </SimpleGrid>
+      <Text color={colors.mainYello} fontWeight="500">
+        Special Offer
+      </Text>
+      <Heading color={colors.black} my={3}>
+        Get 30% Discount Every Item
+      </Heading>
+      {countdown}
     </Box>
   );
 };
