@@ -23,7 +23,7 @@ const Slide = () => {
     { src: pizza, text: "Seasons Pizza Italian Style" },
     { src: burgar, text: "Burger King with multiple toppings" },
     { src: rize, text: "Arabic steamed rice dish" },
-    { src: pasta, text: "deltion pasta ........................." },
+    { src: pasta, text: "deltion pasta ......" },
   ];
 
   // Fade-in animation for the images and text
@@ -44,18 +44,18 @@ const Slide = () => {
 
   return (
     <Box
-      display="flex"
-      alignItems="center"
+      display={{ base: "flex", lg: "block" }}
       justifyContent="space-between"
+      alignItems="center"
       w="auto"
-      h="600px"
+      h={{ base: "400px", md: "500px", lg: "600px" }}
       backgroundImage={image}
       backgroundSize="cover"
     >
       <animated.div style={props}>
-        <Flex p={10} align="center">
+        <Flex p={{ base: 5, md: 10 }} justifyContent={"space-between"}>
           <Center>
-            <Box ml={3}>
+            <Box ml={"auto"} textAlign="center">
               <Text
                 fontSize={20}
                 fontWeight={500}
@@ -65,14 +65,16 @@ const Slide = () => {
                 Welcome to our restaurant
               </Text>
               <Heading
+                whiteSpace="wrap"
                 color={{ base: "white", md: "blackAlpha.800" }}
-                fontSize={{ base: 70, md: 85, lg: 95 }}
+                fontSize={{ base: 40, md: 60, xl: 95 }}
               >
                 {slider[index].text}
               </Heading>
               <Box display="inline-block" mt={7}>
                 <OrderButton
                   color="white"
+                  BG={colors.mainYello}
                   width="100%"
                   hover={"none"}
                   active={{ bg: "#773200" }}

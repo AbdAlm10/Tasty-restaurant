@@ -14,7 +14,7 @@ const NavBar = () => {
         <NavbarDrawer />
       </Hide>
       <Image
-        ml={{ base: 0, md: "100px" }}
+        ml={{ base: 0, md: "50px" }}
         src={logo}
         alt="Logo"
         w={{ base: "75px", md: "100px" }}
@@ -22,7 +22,7 @@ const NavBar = () => {
       />
 
       <Show above="md">
-        <HStack spacing={10}>
+        <HStack spacing={{ md: 5, lg: 10 }}>
           <Link to={"/"}>
             <NavBarPageTitles>Home</NavBarPageTitles>
           </Link>
@@ -38,7 +38,7 @@ const NavBar = () => {
         </HStack>
       </Show>
 
-      <HStack spacing={6} mr={{ base: 0, md: "50px" }}>
+      <HStack spacing={6} mr={{ base: 0, md: "25px" }}>
         <FaCartShopping color={colors.mainBrown} size={20} />
         <Box>
           <ImSearch color={colors.mainBrown} size={15} />

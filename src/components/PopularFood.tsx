@@ -9,7 +9,7 @@ import {
   Heading,
   Text,
   VStack,
-  HStack,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import colors from "../assets/colors/colors";
 import { FaHeart } from "react-icons/fa6";
@@ -35,9 +35,12 @@ const PopularFood = () => {
         <Heading color={colors.black}>Popular Food Items</Heading>
       </VStack>
 
-      <HStack spacing={8}>
+      <SimpleGrid
+        columns={{ base: 1, md: 2, lg: 4 }}
+        spacing={{ base: 0, md: 5 }}
+      >
         {foodItems.map((item, index) => (
-          <Card key={`duplicate-${index}`} my={10}>
+          <Card key={`duplicate-${index}`} my={{ base: 5, md: 3, lg: 10 }}>
             <CardBody
               display="flex"
               flexDirection="column"
@@ -70,7 +73,7 @@ const PopularFood = () => {
             </CardFooter>
           </Card>
         ))}
-      </HStack>
+      </SimpleGrid>
     </VStack>
   );
 };
