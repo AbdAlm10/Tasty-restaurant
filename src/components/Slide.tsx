@@ -10,7 +10,7 @@ import {
 import { animated, useSpring } from "@react-spring/web";
 import { useEffect, useState } from "react";
 import colors from "../assets/colors/colors";
-import image from "../assets/images/HeroBackground.jpeg";
+import image from "../assets/images/HeroBackground.png";
 import burgar from "../assets/images/burgar.png";
 import pizza from "../assets/images/pizza.png";
 import rize from "../assets/images/rize.png";
@@ -45,7 +45,7 @@ const Slide = () => {
   return (
     <Box
       display={{ base: "flex", lg: "block" }}
-      justifyContent="space-between"
+      justifyContent={{ base: "center", lg: "space-between" }}
       alignItems="center"
       w="auto"
       h={{ base: "400px", md: "500px", lg: "600px" }}
@@ -66,8 +66,8 @@ const Slide = () => {
               </Text>
               <Heading
                 whiteSpace="wrap"
-                color={{ base: "white", md: "blackAlpha.800" }}
-                fontSize={{ base: 40, md: 60, xl: 95 }}
+                color={"white"}
+                fontSize={{ base: 40, md: 60, lg: 65, xl: 80 }}
               >
                 {slider[index].text}
               </Heading>
