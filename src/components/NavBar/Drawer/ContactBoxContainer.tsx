@@ -3,7 +3,7 @@ import { FiPhone } from "react-icons/fi";
 import { LuClock4 } from "react-icons/lu";
 import { MdOutlineEmail, MdOutlinePlace } from "react-icons/md";
 import colors from "../../../assets/colors/colors";
-import OrderButton from "./OrderButton";
+import OrderButton from "../../OrderButton";
 
 const ContactBoxContainer = () => {
   return (

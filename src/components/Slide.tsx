@@ -15,7 +15,7 @@ import burgar from "../assets/images/burgar.png";
 import pizza from "../assets/images/pizza.png";
 import rize from "../assets/images/rize.png";
 import pasta from "../assets/images/pasta.png";
-import OrderButton from "./NavBar/Drawer/OrderButton";
+import OrderButton from "./OrderButton";
 
 const Slide = () => {
   const [index, setIndex] = useState(0);

@@ -1,11 +1,10 @@
 import {
   Box,
-  Button,
-  ButtonGroup,
   Card,
   CardBody,
   Center,
   Heading,
+  HStack,
   Image,
   SimpleGrid,
   Text,
@@ -14,6 +13,7 @@ import {
 import colors from "../assets/colors/colors";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa6";
 import Chefs from "../data/Chefs";
+import CustomizableButton from "./CustomizableButton";
 
 const OurTeam = () => {
   return (
@@ -42,16 +42,18 @@ const OurTeam = () => {
                   </Heading>
                   <Text color="gray">{chef.role}</Text>
 
-                  <ButtonGroup>
-                    <Button p={0} bg="none">
+                  {/* Social media buttons*/}
+                  <HStack spacing={0}>
+                    <CustomizableButton>
                       <FaLinkedinIn color={colors.mainYello} />
-                    </Button>
-
-                    <Button p={0} ml="0" bg="none">
-                      <FaFacebookF color={colors.mainYello} />
-                    </Button>
-                  </ButtonGroup>
+                    </CustomizableButton>
+                    <CustomizableButton color={colors.mainYello}>
+                      <FaFacebookF />
+                    </CustomizableButton>
+                  </HStack>
                 </VStack>
+
+                {/* Chefs images*/}
                 <Image boxSize={300} src={chef.imageSrc} />
               </CardBody>
             </Card>

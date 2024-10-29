@@ -14,7 +14,7 @@ import {
 import colors from "../assets/colors/colors";
 import { FaHeart } from "react-icons/fa6";
 import foodItems from "../data/FoodItems";
-import OrderButton from "./NavBar/Drawer/OrderButton";
+import OrderButton from "./OrderButton";
 import useLike from "../hooks/useLike";
 
 const PopularFood = () => {
