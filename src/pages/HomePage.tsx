@@ -4,6 +4,7 @@ import Slide from "../components/Slide";
 import colors from "../assets/colors/colors";
 import Offers from "../components/Offers";
 import OurTeam from "../components/OurTeam";
+import FoodMenuSection from "../components/FoodMenuSection";
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
         <PopularFood />
         <Offers />
         <OurTeam />
+        <FoodMenuSection />
       </Box>
     </>
   );
