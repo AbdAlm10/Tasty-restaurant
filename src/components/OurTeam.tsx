@@ -30,6 +30,7 @@ const OurTeam = () => {
         >
           {Chefs.map((chef, index) => (
             <Card
+              overflow="hidden"
               key={index}
               textAlign="center"
               borderRadius="20px"

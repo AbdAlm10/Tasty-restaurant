@@ -1,23 +1,20 @@
 import {
   Box,
-  Stack,
-  VStack,
-  Text,
   Heading,
-  Image,
-  Tab,
+  Stack,
   TabList,
   TabPanel,
   TabPanels,
   Tabs,
-  HStack,
-  Divider,
+  Text,
+  VStack,
 } from "@chakra-ui/react";
 import colors from "../assets/colors/colors";
-import FastFoodIcon from "../assets/images/FastFoodIcon.png";
 import DrinkIcon from "../assets/images/DrinkIcon.png";
-import PizzaIcon from "../assets/images/PizzaIcon.png";
+import FastFoodIcon from "../assets/images/FastFoodIcon.png";
 import PastaIcon from "../assets/images/PastaIcon.png";
+import PizzaIcon from "../assets/images/PizzaIcon.png";
+import FoodMenuTap from "./FoodMenuTap";
 
 const FoodMenuSection = () => {
   return (
@@ -30,33 +27,10 @@ const FoodMenuSection = () => {
 
         <Tabs my={3} variant="unstyled" color={colors.black}>
           <TabList display={{ base: "block", md: "flex" }}>
-            <Tab _selected={{ color: colors.mainYello }}>
-              <Image src={FastFoodIcon} />
-              <Text fontSize={20} fontWeight={500} mx={3}>
-                Fast Food
-              </Text>
-            </Tab>
-            <Divider orientation="vertical" />
-            <Tab>
-              <Image src={DrinkIcon} />
-              <Text fontSize={20} fontWeight={500} mx={3}>
-                Drinks
-              </Text>
-            </Tab>
-            <Divider orientation="vertical" />
-            <Tab>
-              <Image src={PizzaIcon} />
-              <Text fontSize={20} fontWeight={500} mx={3}>
-                Pizza
-              </Text>
-            </Tab>
-            <Divider orientation="vertical" />
-            <Tab>
-              <Image src={PastaIcon} />
-              <Text fontSize={20} fontWeight={500} mx={3}>
-                fresh pizza
-              </Text>
-            </Tab>
+            <FoodMenuTap imageSrc={FastFoodIcon} title="Fast Food" />
+            <FoodMenuTap imageSrc={DrinkIcon} title="Drinks" />
+            <FoodMenuTap imageSrc={PizzaIcon} title="Pizza" />
+            <FoodMenuTap imageSrc={PastaIcon} title="Fresh Pizza" />
           </TabList>
 
           <TabPanels>
