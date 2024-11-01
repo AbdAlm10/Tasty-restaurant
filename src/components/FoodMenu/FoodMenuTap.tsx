@@ -1,5 +1,5 @@
 import { Tab, Image, Text, Divider } from "@chakra-ui/react";
-import colors from "../assets/colors/colors";
+import colors from "../../assets/colors/colors";
 
 interface Props {
   imageSrc: string;

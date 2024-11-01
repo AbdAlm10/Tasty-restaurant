@@ -27,12 +27,13 @@ const PopularFood = () => {
         <Heading color={colors.black}>Popular Food Items</Heading>
       </VStack>
 
+      {/* Create two rows if there are more than four items */}
       <SimpleGrid
-        columns={{ base: 1, md: 2, lg: 4 }}
+        columns={{ base: 1, md: 2, lg: 4 }} // 4 items per row on large screens
         spacing={{ base: 0, md: 5 }}
       >
-        {foodItems.map((item, index) => (
-          <Card key={`duplicate-${index}`} my={{ base: 5, md: 3, lg: 10 }}>
+        {foodItems.slice(0, 4).map((item, index) => (
+          <Card key={index} my={{ base: 5, md: 3, lg: 10 }}>
             <CardBody
               display="flex"
               flexDirection="column"
