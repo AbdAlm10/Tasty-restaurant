@@ -11,10 +11,10 @@ import { animated, useSpring } from "@react-spring/web";
 import { useEffect, useState } from "react";
 import colors from "../assets/colors/colors";
 import image from "../assets/images/HeroBackground.png";
-import burgar from "../assets/images/burgar.png";
-import pizza from "../assets/images/pizza.png";
-import rize from "../assets/images/rize.png";
-import pasta from "../assets/images/pasta.png";
+import burgar from "../assets/images/FastFood/FastFood1.png";
+import pizza from "../assets/images/Pizza/pizza.png";
+import rize from "../assets/images/FastFood/FastFood2.png";
+import pasta from "../assets/images/Pasta/pasta.png";
 import OrderButton from "./OrderButton";
 
 const Slide = () => {

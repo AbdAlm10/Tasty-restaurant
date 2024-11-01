@@ -12,10 +12,10 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import colors from "../../assets/colors/colors";
-import DrinkIcon from "../../assets/images/DrinkIcon.png";
-import FastFoodIcon from "../../assets/images/FastFoodIcon.png";
-import PastaIcon from "../../assets/images/PastaIcon.png";
-import PizzaIcon from "../../assets/images/PizzaIcon.png";
+import DrinkIcon from "../../assets/images/Drinks/DrinkIcon.png";
+import FastFoodIcon from "../../assets/images/FastFood/FastFoodIcon.png";
+import PastaIcon from "../../assets/images/Pasta/PastaIcon.png";
+import PizzaIcon from "../../assets/images/Pizza/PizzaIcon.png";
 import FoodMenuTap from "./FoodMenuTap";
 import Meal from "./Meal";
 
