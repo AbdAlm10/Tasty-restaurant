@@ -23,7 +23,6 @@ const FoodMenuSection = () => (
   <Box bg={colors.beige} p={5}>
     <Center>
       <VStack
-        maxH="800px"
         w={{ base: "95%", md: "80%" }}
         alignItems="normal"
         bg="white"

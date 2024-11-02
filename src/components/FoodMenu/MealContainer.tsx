@@ -15,7 +15,7 @@ interface Props {
 const MealContainer = ({ item }: Props) => (
   <HStack justifyContent="space-between" w={{ base: "100%", md: "auto" }}>
     <HStack>
-      <Image borderRadius="25%" boxSize="90px" src={item.src} />
+      <Image borderRadius="25%" boxSize="100px" src={item.src} />
       <VStack alignItems="start" ml="3" spacing={0}>
         <Heading color={colors.black} fontSize={{ base: 15, lg: 20 }}>
           {item.title}

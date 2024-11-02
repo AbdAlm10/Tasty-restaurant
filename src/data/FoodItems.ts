@@ -52,7 +52,7 @@ const foodItems = [
   },
   {
     src: FastFood4,
-    title: "Grilled chicken with sauce",
+    title: "Grilled chicken",
     price: "89$",
     description: "New Recipe ⚡️",
     liked: false,

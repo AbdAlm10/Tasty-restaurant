@@ -38,7 +38,6 @@ const PopularFood = () => {
               display="flex"
               flexDirection="column"
               alignItems="center"
-              justifyContent="center"
               textAlign="center"
               height="200px"
             >
