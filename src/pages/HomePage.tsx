@@ -5,6 +5,7 @@ import colors from "../assets/colors/colors";
 import Offers from "../components/Offers";
 import OurTeam from "../components/OurTeam";
 import FoodMenuSection from "../components/FoodMenu/FoodMenuSection";
+import Rating from "../components/Rating";
 
 const HomePage = () => {
   return (
@@ -15,6 +16,9 @@ const HomePage = () => {
         <Offers />
         <OurTeam />
         <FoodMenuSection />
+        <Box mt={5}>
+          <Rating />
+        </Box>
       </Box>
     </>
   );
