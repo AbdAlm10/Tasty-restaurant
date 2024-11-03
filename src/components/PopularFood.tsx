@@ -16,20 +16,21 @@ import { FaHeart } from "react-icons/fa6";
 import foodItems from "../data/FoodItems";
 import OrderButton from "./OrderButton";
 import useLike from "../hooks/useLike";
+import SectionsTitle from "./SectionsTitle";
 
 const PopularFood = () => {
   const { toggleLike, likedItems } = useLike();
 
   return (
-    <VStack my={20}>
-      <VStack fontWeight="bold" fontSize={20}>
-        <Text color={colors.mainYello}>Best Food</Text>
-        <Heading color={colors.black}>Popular Food Items</Heading>
-      </VStack>
+    <VStack>
+      <SectionsTitle
+        marginTop={10}
+        title="Best Food"
+        description="Popular Food Items"
+      />
 
-      {/* Create two rows if there are more than four items */}
       <SimpleGrid
-        columns={{ base: 1, md: 2, lg: 4 }} // 4 items per row on large screens
+        columns={{ base: 1, md: 2, lg: 4 }}
         spacing={{ base: 0, md: 5 }}
       >
         {foodItems.slice(0, 4).map((item, index) => (

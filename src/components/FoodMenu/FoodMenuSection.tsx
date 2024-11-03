@@ -2,13 +2,10 @@ import {
   Box,
   Center,
   Divider,
-  Heading,
-  Stack,
   TabList,
   TabPanel,
   TabPanels,
   Tabs,
-  Text,
   VStack,
 } from "@chakra-ui/react";
 import colors from "../../assets/colors/colors";
@@ -16,6 +13,7 @@ import DrinkIcon from "../../assets/images/Drinks/DrinkIcon.png";
 import FastFoodIcon from "../../assets/images/FastFood/FastFoodIcon.png";
 import PastaIcon from "../../assets/images/Pasta/PastaIcon.png";
 import PizzaIcon from "../../assets/images/Pizza/PizzaIcon.png";
+import SectionsTitle from "../SectionsTitle";
 import FoodMenuTap from "./FoodMenuTap";
 import Meal from "./Meal";
 
@@ -29,10 +27,7 @@ const FoodMenuSection = () => (
         borderRadius={20}
         p={{ base: 5, lg: 10 }}
       >
-        <Stack fontWeight="bold" fontSize={20} textAlign="center">
-          <Text color={colors.mainYello}>Food Menu</Text>
-          <Heading color={colors.black}>Fresheat Foods Menu</Heading>
-        </Stack>
+        <SectionsTitle title="Food Menu" description="Fresheat Foods Menu" />
 
         <Tabs variant="unstyled" color={colors.black}>
           <Center>

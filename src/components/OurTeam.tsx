@@ -14,14 +14,16 @@ import colors from "../assets/colors/colors";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa6";
 import Chefs from "../data/Chefs";
 import CustomizableButton from "./CustomizableButton";
+import SectionsTitle from "./SectionsTitle";
 
 const OurTeam = () => {
   return (
     <Box>
-      <VStack textAlign="center" mt={20} fontWeight="bold" fontSize={20}>
-        <Text color={colors.mainYello}>Our Chefe</Text>
-        <Heading color={colors.black}>Meet Our Expert Chefe</Heading>
-      </VStack>
+      <SectionsTitle
+        marginTop={10}
+        title="Our Chefe"
+        description="Meet Our Expert Chefe"
+      />
 
       <Center>
         <SimpleGrid

@@ -1,6 +1,7 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import colors from "../assets/colors/colors";
 import useCountDown from "../hooks/useCountDown";
+import SectionsTitle from "./SectionsTitle";
 
 interface CountDownProps {
   date: Date;
@@ -20,12 +21,10 @@ const CountDown: React.FC<CountDownProps> = ({ date }) => {
       h="250px"
       borderRadius="30px"
     >
-      <Text color={colors.mainYello} fontWeight="500">
-        Special Offer
-      </Text>
-      <Heading color={colors.black} my={3}>
-        Get 30% Discount Every Item
-      </Heading>
+      <SectionsTitle
+        title="Special Offer"
+        description="Get 30% Discount Every Item"
+      />
       {countdown}
     </Box>
   );
