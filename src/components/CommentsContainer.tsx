@@ -18,11 +18,20 @@ interface Props {
   userImageSrc: string;
 }
 
+const responseSize = {
+  HeightAndWidth: { base: "50px" },
+  FontSize: {
+    name: { base: "18px", lg: "20px" },
+    userName: { base: "12px", lg: "15px" },
+  },
+};
+
 const CommentsContainer = (props: Props) => {
   return (
     <Card
       borderTop="2px"
       borderTopColor={colors.mainYello}
+      h="100%"
       p={5}
       borderRadius="20px"
       bg="white"
@@ -35,10 +44,21 @@ const CommentsContainer = (props: Props) => {
       </CardBody>
       <CardFooter p={2}>
         <HStack>
-          <Image src={props.userImageSrc} w={20} h={20} borderRadius="50%" />
+          <Image
+            src={props.userImageSrc}
+            w={responseSize.HeightAndWidth}
+            h={responseSize.HeightAndWidth}
+            borderRadius="50%"
+          />
           <VStack alignItems="start" spacing={0}>
-            <Heading fontSize={20}>{props.name}</Heading>
-            <Text fontWeight="500" color="gray" fontSize={15}>
+            <Heading fontSize={responseSize.FontSize.name}>
+              {props.name}
+            </Heading>
+            <Text
+              fontWeight="500"
+              color="gray"
+              fontSize={responseSize.FontSize.userName}
+            >
               {props.userName}
             </Text>
           </VStack>
