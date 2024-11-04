@@ -35,10 +35,12 @@ const CommentsContainer = (props: Props) => {
       </CardBody>
       <CardFooter p={2}>
         <HStack>
-          <Image src={props.userImageSrc} w={10} h={10} borderRadius="50%" />
+          <Image src={props.userImageSrc} w={20} h={20} borderRadius="50%" />
           <VStack alignItems="start" spacing={0}>
             <Heading fontSize={20}>{props.name}</Heading>
-            <Text fontSize={15}>{props.userName}</Text>
+            <Text fontWeight="500" color="gray" fontSize={15}>
+              {props.userName}
+            </Text>
           </VStack>
         </HStack>
       </CardFooter>
