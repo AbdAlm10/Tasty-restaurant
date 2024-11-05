@@ -8,6 +8,7 @@ import FoodMenuSection from "../components/FoodMenu/FoodMenuSection";
 import Rating from "../components/Rating";
 import BlogSection from "../components/BlogSection";
 import Gallery from "../components/Gallery";
+import Footer from "../components/Footer";
 
 const HomePage = () => {
   return (
@@ -21,6 +22,7 @@ const HomePage = () => {
         <Rating />
         <BlogSection />
         <Gallery />
+        <Footer />
       </Box>
     </>
   );

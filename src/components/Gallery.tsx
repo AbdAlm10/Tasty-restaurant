@@ -10,7 +10,7 @@ const Gallery = () => {
       display="flex"
     >
       {gallery.map((item, index) => (
-        <Box mt={40}>
+        <Box mt="100px">
           <Image w="250px" h="100%" key={index} src={item.postSrc} />
         </Box>
       ))}
