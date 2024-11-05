@@ -23,7 +23,7 @@ const Slide = () => {
     { src: pizza, text: "Seasons Pizza Italian Style" },
     { src: burgar, text: "Burger King with multiple toppings" },
     { src: rize, text: "Arabic steamed rice dish" },
-    { src: pasta, text: "deltion pasta ......" },
+    { src: pasta, text: "Tomato pasta with ment" },
   ];
 
   // Fade-in animation for the images and text

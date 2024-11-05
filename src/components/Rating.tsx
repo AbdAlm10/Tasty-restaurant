@@ -1,20 +1,18 @@
-import { Box, GridItem, SimpleGrid, VStack } from "@chakra-ui/react";
-import colors from "../assets/colors/colors";
+import { GridItem, SimpleGrid, VStack } from "@chakra-ui/react";
+import Users from "../data/Users";
 import CommentsContainer from "./CommentsContainer";
 import SectionsTitle from "./SectionsTitle";
-import Users from "../data/Users";
 
 const Rating = () => {
   return (
     <VStack alignItems="center" justifyContent="center" p={{ base: 5, lg: 10 }}>
-      <Box bg={colors.beige} borderRadius="20px" p={5}>
-        <SectionsTitle
-          title={"Testimonials"}
-          description={"What our Clients Say"}
-        />
-      </Box>
+      <SectionsTitle
+        marginTop={10}
+        title={"Testimonials"}
+        description={"What our Clients Say"}
+      />
 
-      <SimpleGrid columns={{ base: 1, lg: 3 }} spacing={5}>
+      <SimpleGrid my={5} columns={{ base: 1, lg: 3 }} spacing={5}>
         {Users.map((user, index) => (
           <GridItem key={index}>
             <CommentsContainer
