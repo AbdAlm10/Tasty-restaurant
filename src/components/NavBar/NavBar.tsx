@@ -1,5 +1,5 @@
 import { Box, Hide, HStack, Image, Show } from "@chakra-ui/react";
-import logo from "../../assets/images/Restaurant.webp";
+import logo from "../../assets/images/Logo.webp";
 import { FaCartShopping } from "react-icons/fa6";
 import { ImSearch } from "react-icons/im";
 import colors from "../../assets/colors/colors";
