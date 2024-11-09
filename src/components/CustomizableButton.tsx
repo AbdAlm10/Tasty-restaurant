@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 interface Props {
   title?: string;
   color?: string;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 const CustomizableButton = ({ ...style }: Props) => {

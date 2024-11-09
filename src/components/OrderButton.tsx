@@ -1,6 +1,5 @@
 import { Box, Button, Text } from "@chakra-ui/react";
-import { FiShoppingCart } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
+import { FaCartShopping } from "react-icons/fa6";
 
 interface Props {
   width?: string;
@@ -11,23 +10,17 @@ interface Props {
 }
 
 const OrderButton = ({ ...style }: Props) => {
-  const navigate = useNavigate();
-  const handleClick = () => {
-    navigate("FoodMenu/");
-  };
-
   return (
     <Box>
       <Button
-        onClick={handleClick}
         _hover={style.hover}
         _active={style.active}
         color={style.color}
         bg={style.BG}
         w={style.width}
       >
-        <FiShoppingCart />
-        <Text ml={3}>Order now</Text>
+        <FaCartShopping />
+        <Text ml={3}>Add to cart</Text>
       </Button>
     </Box>
   );

@@ -1,11 +1,11 @@
 import { Box, Hide, HStack, Image, Show } from "@chakra-ui/react";
-import logo from "../../assets/images/Logo.webp";
-import { FaCartShopping } from "react-icons/fa6";
 import { ImSearch } from "react-icons/im";
-import colors from "../../assets/colors/colors";
-import NavBarPageTitles from "../NavBar/NavBarPageTitles";
-import NavbarDrawer from "./Drawer/NavbarDrawer";
 import { Link } from "react-router-dom";
+import colors from "../../assets/colors/colors";
+import logo from "../../assets/images/Logo.webp";
+import NavBarPageTitles from "../NavBar/NavBarPageTitles";
+import ShoppingCard from "../ShoppingCard";
+import NavbarDrawer from "./Drawer/NavbarDrawer";
 
 const NavBar = () => {
   return (
@@ -39,7 +39,7 @@ const NavBar = () => {
       </Show>
 
       <HStack spacing={6} mr={{ base: 0, md: "25px" }}>
-        <FaCartShopping color={colors.mainBrown} size={20} />
+        <ShoppingCard />
         <Box>
           <ImSearch color={colors.mainBrown} size={15} />
         </Box>

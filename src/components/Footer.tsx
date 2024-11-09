@@ -80,7 +80,7 @@ const Footer = () => {
                 <>
                   <Link to={"/FoodMenu/"}>Food Menu</Link>
                   <Link to={"/LatestBlog/"}>Latest Blog</Link>
-                  <Link to={"/LatestBlog/"}>Contact</Link>
+                  <Link to={"/Contact/"}>Contact</Link>
                 </>
               }
             />
