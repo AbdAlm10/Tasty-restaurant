@@ -7,7 +7,14 @@ import NavBarPageTitles from "../NavBar/NavBarPageTitles";
 import ShoppingCard from "../ShoppingCard";
 import NavbarDrawer from "./Drawer/NavbarDrawer";
 
-const NavBar = () => {
+interface Props {
+  image: string;
+  FoodName: string;
+  price: number;
+  quantity: number;
+}
+
+const NavBar = (prop: Props) => {
   return (
     <HStack bg="white" justifyContent="space-between" p={3}>
       <Hide above="md">
@@ -39,7 +46,12 @@ const NavBar = () => {
       </Show>
 
       <HStack spacing={6} mr={{ base: 0, md: "25px" }}>
-        <ShoppingCard />
+        <ShoppingCard
+          image={prop.image}
+          FoodName={prop.FoodName}
+          price={prop.price}
+          quantity={prop.quantity}
+        />
         <Box>
           <ImSearch color={colors.mainBrown} size={15} />
         </Box>

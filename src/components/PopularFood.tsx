@@ -1,5 +1,4 @@
 import {
-  Image,
   Box,
   Button,
   ButtonGroup,
@@ -7,18 +6,22 @@ import {
   CardBody,
   CardFooter,
   Heading,
+  Image,
+  SimpleGrid,
   Text,
   VStack,
-  SimpleGrid,
 } from "@chakra-ui/react";
+import { FaCartShopping, FaHeart } from "react-icons/fa6";
 import colors from "../assets/colors/colors";
-import { FaHeart } from "react-icons/fa6";
 import foodItems from "../data/FoodItems";
-import OrderButton from "./OrderButton";
 import useLike from "../hooks/useLike";
 import SectionsTitle from "./SectionsTitle";
 
-const PopularFood = () => {
+interface Props {
+  onAdd: (FoodName: string) => void;
+}
+
+const PopularFood = ({ onAdd }: Props) => {
   const { toggleLike, likedItems } = useLike();
 
   return (
@@ -55,7 +58,10 @@ const PopularFood = () => {
             </CardBody>
             <CardFooter mt={-5}>
               <ButtonGroup>
-                <OrderButton color={colors.black} hover="none" />
+                <Button>
+                  <FaCartShopping />
+                  <Text ml={3}>Add to cart</Text>
+                </Button>
                 <Button
                   color={likedItems[index] ? colors.mainYello : colors.black}
                   onClick={() => toggleLike(index)}

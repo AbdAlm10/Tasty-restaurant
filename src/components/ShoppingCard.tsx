@@ -8,13 +8,24 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
+  Heading,
+  Image,
   useDisclosure,
+  VStack,
+  Text,
 } from "@chakra-ui/react";
 import { useRef } from "react";
 import { FaCartShopping } from "react-icons/fa6";
 import colors from "../assets/colors/colors";
 
-const ShoppingCard = () => {
+interface ShoppingCardItems {
+  image: string;
+  FoodName: string;
+  price: number;
+  quantity: number;
+}
+
+const ShoppingCard = (items: ShoppingCardItems) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef<HTMLDivElement>(null);
 
@@ -34,12 +45,17 @@ const ShoppingCard = () => {
           <DrawerCloseButton />
           <DrawerHeader>Shopping Card</DrawerHeader>
 
-          <DrawerBody>// DrawerBody</DrawerBody>
+          <DrawerBody>
+            <Image src={items.image} />
+            <VStack>
+              <Heading>{items.FoodName}</Heading>
+              <Text>{items.quantity}</Text> - <Text>{items.price}</Text>
+            </VStack>
+          </DrawerBody>
 
           <DrawerFooter>
             <Button
               _active={{ opacity: 0.7 }}
-              _hover="none"
               bg={colors.mainYello}
               color="white"
             >

@@ -79,9 +79,9 @@ const BlogSection = () => {
                 <Link to="LatestBlog/">
                   <Button
                     rightIcon={<IoArrowUndoSharp />}
-                    bg="non"
-                    _hover="none"
-                    _active="none"
+                    _hover={{ bg: "white" }}
+                    _active={{ bg: "white" }}
+                    bg="none"
                     color="gray.500"
                   >
                     Read More

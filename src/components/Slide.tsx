@@ -76,7 +76,6 @@ const Slide = () => {
                   color="white"
                   BG={colors.mainYello}
                   width="100%"
-                  hover={"none"}
                   active={{ bg: "#773200" }}
                 />
               </Box>

@@ -32,7 +32,7 @@ const ContactBoxContainer = () => {
         <Text>+11002345909</Text>
       </HStack>
 
-      <OrderButton width={"100%"} />
+      <OrderButton width={"100%"} BG={colors.mainYello} color="white" />
     </Box>
   );
 };
