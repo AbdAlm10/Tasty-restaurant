@@ -16,13 +16,15 @@ import colors from "../assets/colors/colors";
 import foodItems from "../data/FoodItems";
 import useLike from "../hooks/useLike";
 import SectionsTitle from "./SectionsTitle";
+import Store, { CartItem } from "../store"; // Import Zustand store
 
-interface Props {
-  onAdd: (FoodName: string) => void;
-}
-
-const PopularFood = ({ onAdd }: Props) => {
+const PopularFood = () => {
   const { toggleLike, likedItems } = useLike();
+  const addToCart = Store((state) => state.addToCart); // Get addToCart from Zustand store
+
+  const handleAddToCart = (item: CartItem) => {
+    addToCart(item); // Add item to the cart
+  };
 
   return (
     <VStack>
@@ -31,7 +33,6 @@ const PopularFood = ({ onAdd }: Props) => {
         title="Best Food"
         description="Popular Food Items"
       />
-
       <SimpleGrid
         columns={{ base: 1, md: 2, lg: 4 }}
         spacing={{ base: 0, md: 5 }}
@@ -58,7 +59,16 @@ const PopularFood = ({ onAdd }: Props) => {
             </CardBody>
             <CardFooter mt={-5}>
               <ButtonGroup>
-                <Button>
+                <Button
+                  onClick={() =>
+                    handleAddToCart({
+                      image: item.src,
+                      FoodName: item.title,
+                      price: parseFloat(item.price),
+                      quantity: 1,
+                    })
+                  }
+                >
                   <FaCartShopping />
                   <Text ml={3}>Add to cart</Text>
                 </Button>

@@ -4,17 +4,10 @@ import { Link } from "react-router-dom";
 import colors from "../../assets/colors/colors";
 import logo from "../../assets/images/Logo.webp";
 import NavBarPageTitles from "../NavBar/NavBarPageTitles";
-import ShoppingCard from "../ShoppingCard";
+import ShoppingCard from "../ShoppingCard"; // No need to pass cartItems prop here
 import NavbarDrawer from "./Drawer/NavbarDrawer";
 
-interface Props {
-  image: string;
-  FoodName: string;
-  price: number;
-  quantity: number;
-}
-
-const NavBar = (prop: Props) => {
+const NavBar = () => {
   return (
     <HStack bg="white" justifyContent="space-between" p={3}>
       <Hide above="md">
@@ -46,12 +39,7 @@ const NavBar = (prop: Props) => {
       </Show>
 
       <HStack spacing={6} mr={{ base: 0, md: "25px" }}>
-        <ShoppingCard
-          image={prop.image}
-          FoodName={prop.FoodName}
-          price={prop.price}
-          quantity={prop.quantity}
-        />
+        <ShoppingCard /> {/* No cartItems prop needed */}
         <Box>
           <ImSearch color={colors.mainBrown} size={15} />
         </Box>
