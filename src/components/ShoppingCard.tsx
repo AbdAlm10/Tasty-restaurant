@@ -54,7 +54,7 @@ const ShoppingCard = () => {
                   mt={5}
                   key={index}
                   justifyContent="space-between"
-                  display="inline-flex"
+                  display="flex"
                 >
                   <HStack>
                     <Image src={item.image} boxSize="65px" />

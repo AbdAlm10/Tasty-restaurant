@@ -10,6 +10,7 @@ export interface CartItem {
 interface CartState {
   cartItems: CartItem[];
   total: number;
+  itemsTotal: number;
   addToCart: (item: CartItem) => void;
   removeFromCart: (name: string) => void;
   decreaseItems: (name: string) => void;
@@ -18,6 +19,7 @@ interface CartState {
 const Store = create<CartState>((set) => ({
   cartItems: [],
   total: 0,
+  itemsTotal: 0,
 
   addToCart: (cartItem: CartItem) =>
     set((state) => {
@@ -33,12 +35,20 @@ const Store = create<CartState>((set) => ({
           )
         : [...state.cartItems, { ...cartItem, quantity: 1 }];
 
+      const newTotal = updatedCartItems.reduce(
+        (acc, item) => acc + item.price * item.quantity,
+        0
+      );
+
+      const newItemsTotal = updatedCartItems.reduce(
+        (acc, item) => acc + item.quantity,
+        0
+      );
+
       return {
         cartItems: updatedCartItems,
-        total: updatedCartItems.reduce(
-          (acc, item) => acc + item.price * item.quantity,
-          0
-        ),
+        total: newTotal,
+        itemsTotal: newItemsTotal,
       };
     }),
 
@@ -48,12 +58,20 @@ const Store = create<CartState>((set) => ({
         (item) => item.FoodName !== name
       );
 
+      const newTotal = updatedCartItems.reduce(
+        (acc, item) => acc + item.price * item.quantity,
+        0
+      );
+
+      const newItemsTotal = updatedCartItems.reduce(
+        (acc, item) => acc + item.quantity,
+        0
+      );
+
       return {
         cartItems: updatedCartItems,
-        total: updatedCartItems.reduce(
-          (acc, item) => acc + item.price * item.quantity,
-          0
-        ),
+        total: newTotal,
+        itemsTotal: newItemsTotal,
       };
     }),
 
@@ -67,13 +85,22 @@ const Store = create<CartState>((set) => ({
         )
         .filter((item) => item.quantity > 0);
 
+      const newTotal = updatedCartItems.reduce(
+        (acc, item) => acc + item.price * item.quantity,
+        0
+      );
+
+      const newItemsTotal = updatedCartItems.reduce(
+        (acc, item) => acc + item.quantity,
+        0
+      );
+
       return {
         cartItems: updatedCartItems,
-        total: updatedCartItems.reduce(
-          (acc, item) => acc + item.price * item.quantity,
-          0
-        ),
+        total: newTotal,
+        itemsTotal: newItemsTotal,
       };
     }),
 }));
+
 export default Store;
