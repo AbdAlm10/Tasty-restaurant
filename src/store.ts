@@ -1,4 +1,6 @@
 import { create } from "zustand";
+import foodItems from "./data/FoodItems";
+import calculateTotals from "./hooks/useTotals";
 
 export interface CartItem {
   image: string;
@@ -11,45 +13,34 @@ interface CartState {
   cartItems: CartItem[];
   total: number;
   itemsTotal: number;
+  filteredItems: CartItem[];
   addToCart: (item: CartItem) => void;
   removeFromCart: (name: string) => void;
   decreaseItems: (name: string) => void;
+  searchFoods: (searchText: string) => void;
 }
 
 const Store = create<CartState>((set) => ({
   cartItems: [],
   total: 0,
   itemsTotal: 0,
+  filteredItems: [],
 
   addToCart: (cartItem: CartItem) =>
     set((state) => {
-      const existingItem = state.cartItems.find(
-        (item) => item.FoodName === cartItem.FoodName
+      const updatedCartItems = state.cartItems.map((item) =>
+        item.FoodName === cartItem.FoodName
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
       );
 
-      const updatedCartItems = existingItem
-        ? state.cartItems.map((item) =>
-            item.FoodName === cartItem.FoodName
-              ? { ...item, quantity: item.quantity + 1 }
-              : item
-          )
-        : [...state.cartItems, { ...cartItem, quantity: 1 }];
+      if (
+        !updatedCartItems.find((item) => item.FoodName === cartItem.FoodName)
+      ) {
+        updatedCartItems.push({ ...cartItem, quantity: 1 });
+      }
 
-      const newTotal = updatedCartItems.reduce(
-        (acc, item) => acc + item.price * item.quantity,
-        0
-      );
-
-      const newItemsTotal = updatedCartItems.reduce(
-        (acc, item) => acc + item.quantity,
-        0
-      );
-
-      return {
-        cartItems: updatedCartItems,
-        total: newTotal,
-        itemsTotal: newItemsTotal,
-      };
+      return calculateTotals(updatedCartItems);
     }),
 
   removeFromCart: (name: string) =>
@@ -57,22 +48,7 @@ const Store = create<CartState>((set) => ({
       const updatedCartItems = state.cartItems.filter(
         (item) => item.FoodName !== name
       );
-
-      const newTotal = updatedCartItems.reduce(
-        (acc, item) => acc + item.price * item.quantity,
-        0
-      );
-
-      const newItemsTotal = updatedCartItems.reduce(
-        (acc, item) => acc + item.quantity,
-        0
-      );
-
-      return {
-        cartItems: updatedCartItems,
-        total: newTotal,
-        itemsTotal: newItemsTotal,
-      };
+      return calculateTotals(updatedCartItems);
     }),
 
   decreaseItems: (name: string) =>
@@ -84,22 +60,23 @@ const Store = create<CartState>((set) => ({
             : item
         )
         .filter((item) => item.quantity > 0);
+      return calculateTotals(updatedCartItems);
+    }),
 
-      const newTotal = updatedCartItems.reduce(
-        (acc, item) => acc + item.price * item.quantity,
-        0
-      );
+  searchFoods: (searchText: string) =>
+    set(() => {
+      const filteredItems = foodItems
+        .filter((item) =>
+          item.title.toLowerCase().includes(searchText.toLowerCase())
+        )
+        .map((item) => ({
+          image: item.src,
+          FoodName: item.title,
+          price: parseFloat(item.price),
+          quantity: 0,
+        }));
 
-      const newItemsTotal = updatedCartItems.reduce(
-        (acc, item) => acc + item.quantity,
-        0
-      );
-
-      return {
-        cartItems: updatedCartItems,
-        total: newTotal,
-        itemsTotal: newItemsTotal,
-      };
+      return { filteredItems };
     }),
 }));
 

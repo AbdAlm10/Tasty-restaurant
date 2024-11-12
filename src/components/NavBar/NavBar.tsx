@@ -5,11 +5,12 @@ import logo from "../../assets/images/Logo.webp";
 import Store from "../../store";
 import NavBarPageTitles from "../NavBar/NavBarPageTitles";
 import SearchingCard from "../SearchingCard";
-import ShoppingCard from "../ShoppingCard"; // No need to pass cartItems prop here
+import ShoppingCard from "../ShoppingCard";
 import NavbarDrawer from "./Drawer/NavbarDrawer";
 
 const NavBar = () => {
   const itemsTotal = Store((state) => state.itemsTotal);
+  const setSearchText = Store((state) => state.searchFoods);
 
   return (
     <HStack bg="white" justifyContent="space-between" p={3}>
@@ -62,9 +63,8 @@ const NavBar = () => {
             </Text>
           </Box>
         )}
-
         <Box>
-          <SearchingCard />
+          <SearchingCard onSearch={setSearchText} />
         </Box>
       </HStack>
     </HStack>
