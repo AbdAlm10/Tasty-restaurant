@@ -1,12 +1,12 @@
 import { Box, Hide, HStack, Image, Show, Text } from "@chakra-ui/react";
-import { ImSearch } from "react-icons/im";
 import { Link } from "react-router-dom";
 import colors from "../../assets/colors/colors";
 import logo from "../../assets/images/Logo.webp";
+import Store from "../../store";
 import NavBarPageTitles from "../NavBar/NavBarPageTitles";
+import SearchingCard from "../SearchingCard";
 import ShoppingCard from "../ShoppingCard"; // No need to pass cartItems prop here
 import NavbarDrawer from "./Drawer/NavbarDrawer";
-import Store from "../../store";
 
 const NavBar = () => {
   const itemsTotal = Store((state) => state.itemsTotal);
@@ -64,7 +64,7 @@ const NavBar = () => {
         )}
 
         <Box>
-          <ImSearch color={colors.mainBrown} size={15} />
+          <SearchingCard />
         </Box>
       </HStack>
     </HStack>
