@@ -19,13 +19,13 @@ import { useRef } from "react";
 import { CgRemove } from "react-icons/cg";
 import { FaCartShopping } from "react-icons/fa6";
 import colors from "../assets/colors/colors";
-import Store from "../store"; // Import Zustand store
+import Store from "../store";
 import { FaRegTimesCircle } from "react-icons/fa";
 
 const ShoppingCard = () => {
   const { cartItems, removeFromCart, decreaseItems, total } = Store(
     (state) => state
-  ); // Get cart items and removeFromCart function
+  );
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef<HTMLDivElement>(null);
 
@@ -60,8 +60,14 @@ const ShoppingCard = () => {
                     <Image src={item.image} boxSize="65px" />
 
                     {/*Titles*/}
-                    <VStack mx={2} alignItems="start" fontSize="xs" spacing={1}>
-                      <Heading size="sm" whiteSpace="nowrap">
+                    <VStack
+                      my={2}
+                      mx={2}
+                      alignItems="start"
+                      fontSize="xs"
+                      spacing={1}
+                    >
+                      <Heading size="sm" whiteSpace="wrap">
                         {item.FoodName}
                       </Heading>
 
