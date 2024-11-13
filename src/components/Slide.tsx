@@ -7,14 +7,14 @@ import {
   Show,
   Text,
 } from "@chakra-ui/react";
-import { animated, useSpring } from "@react-spring/web";
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import colors from "../assets/colors/colors";
-import image from "../assets/images/HeroBackground.png";
 import burgar from "../assets/images/FastFood/FastFood1.png";
-import pizza from "../assets/images/Pizza/pizza.png";
 import rize from "../assets/images/FastFood/FastFood2.png";
+import image from "../assets/images/HeroBackground.png";
 import pasta from "../assets/images/Pasta/pasta.png";
+import pizza from "../assets/images/Pizza/pizza.png";
 import OrderButton from "./OrderButton";
 
 const Slide = () => {
@@ -25,14 +25,6 @@ const Slide = () => {
     { src: rize, text: "Arabic steamed rice dish" },
     { src: pasta, text: "Tomato pasta with ment" },
   ];
-
-  // Fade-in animation for the images and text
-  const props = useSpring({
-    opacity: 1,
-    from: { opacity: 0 },
-    reset: true,
-    config: { duration: 1000 }, // Fade animation duration (1 second)
-  });
 
   // Change image every 5 seconds
   useEffect(() => {
@@ -52,7 +44,13 @@ const Slide = () => {
       backgroundImage={image}
       backgroundSize="cover"
     >
-      <animated.div style={props}>
+      <motion.div
+        key={index}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+      >
         <Flex p={{ base: 5, md: 10 }} justifyContent={"space-between"}>
           <Center>
             <Box ml={"auto"} textAlign="center">
@@ -65,6 +63,7 @@ const Slide = () => {
                 Welcome to our restaurant
               </Text>
               <Heading
+                maxW="700px"
                 whiteSpace="wrap"
                 color={"white"}
                 fontSize={{ base: 40, md: 60, lg: 65, xl: 80 }}
@@ -85,14 +84,15 @@ const Slide = () => {
           <Show above="lg">
             <Image
               src={slider[index].src}
-              h="410px"
+              h="400px"
+              maxW="450px"
               my={20}
               mx={10}
               alt="Food image"
             />
           </Show>
         </Flex>
-      </animated.div>
+      </motion.div>
     </Box>
   );
 };
