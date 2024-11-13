@@ -1,5 +1,6 @@
 import { Box, Hide, HStack, Image, Show, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import Headroom from "react-headroom";
 import colors from "../../assets/colors/colors";
 import logo from "../../assets/images/Logo.webp";
 import Store from "../../store";
@@ -13,61 +14,78 @@ const NavBar = () => {
   const setSearchText = Store((state) => state.searchFoods);
 
   return (
-    <HStack bg="white" justifyContent="space-between" p={3}>
-      <Hide above="md">
-        <NavbarDrawer />
-      </Hide>
-      <Image
-        ml={{ base: 0, md: "50px" }}
-        src={logo}
-        alt="Logo"
-        w={{ base: "75px", md: "100px" }}
-        h={{ base: "40px", md: "55px" }}
-      />
+    <Headroom>
+      <HStack
+        bg="white"
+        justifyContent="space-between"
+        p={3}
+        style={{
+          backdropFilter: "blur(20px)",
+          transition: "backdrop-filter 0.3s ease, background-color 0.3s ease",
+        }}
+        className="headroom--unpinned"
+        sx={{
+          "&.headroom--unpinned": {
+            backdropFilter: "blur(20px)",
+            backgroundColor: "rgba(255, 255, 255, 0.7)",
+          },
+        }}
+      >
+        <Hide above="md">
+          <NavbarDrawer />
+        </Hide>
+        <Image
+          ml={{ base: 0, md: "50px" }}
+          src={logo}
+          alt="Logo"
+          w={{ base: "75px", md: "100px" }}
+          h={{ base: "40px", md: "55px" }}
+        />
 
-      <Show above="md">
-        <HStack spacing={{ md: 5, lg: 10 }}>
-          <Link to={"/"}>
-            <NavBarPageTitles>Home</NavBarPageTitles>
-          </Link>
-          <Link to={"FoodMenu/"}>
-            <NavBarPageTitles>Food Menu</NavBarPageTitles>
-          </Link>
-          <Link to={"LatestBlog/"}>
-            <NavBarPageTitles>Latest Blog</NavBarPageTitles>
-          </Link>
-          <Link to={"Contact/"}>
-            <NavBarPageTitles>Contact</NavBarPageTitles>
-          </Link>
-        </HStack>
-      </Show>
+        <Show above="md">
+          <HStack spacing={{ md: 5, lg: 10 }}>
+            <Link to={"/"}>
+              <NavBarPageTitles>Home</NavBarPageTitles>
+            </Link>
+            <Link to={"FoodMenu/"}>
+              <NavBarPageTitles>Food Menu</NavBarPageTitles>
+            </Link>
+            <Link to={"LatestBlog/"}>
+              <NavBarPageTitles>Latest Blog</NavBarPageTitles>
+            </Link>
+            <Link to={"Contact/"}>
+              <NavBarPageTitles>Contact</NavBarPageTitles>
+            </Link>
+          </HStack>
+        </Show>
 
-      <HStack spacing={8} mr={{ base: 0, md: "25px" }}>
-        <ShoppingCard />
-        {itemsTotal > 0 && (
-          <Box
-            bg={colors.mainYello}
-            borderRadius="100%"
-            position="absolute"
-            ml={5}
-            mb={5}
-            w={5}
-            h={5}
-            p={0.3}
-            textAlign="center"
-            justifyContent="center"
-            alignItems="center"
-          >
-            <Text fontSize="xs" fontWeight="bold" color="white">
-              {itemsTotal}
-            </Text>
+        <HStack spacing={8} mr={{ base: 0, md: "25px" }}>
+          <ShoppingCard />
+          {itemsTotal > 0 && (
+            <Box
+              bg={colors.mainYello}
+              borderRadius="100%"
+              position="absolute"
+              ml={5}
+              mb={5}
+              w={5}
+              h={5}
+              p={0.3}
+              textAlign="center"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <Text fontSize="xs" fontWeight="bold" color="white">
+                {itemsTotal}
+              </Text>
+            </Box>
+          )}
+          <Box>
+            <SearchingCard onSearch={setSearchText} />
           </Box>
-        )}
-        <Box>
-          <SearchingCard onSearch={setSearchText} />
-        </Box>
+        </HStack>
       </HStack>
-    </HStack>
+    </Headroom>
   );
 };
 
