@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
@@ -13,12 +14,13 @@ import {
   InputLeftElement,
   Text,
   useDisclosure,
+  VStack,
 } from "@chakra-ui/react";
 import { useRef } from "react";
 import { FaSearch } from "react-icons/fa";
 import { ImSearch } from "react-icons/im";
 import colors from "../assets/colors/colors";
-import Store from "../store";
+import Store, { CartItem } from "../store";
 
 interface Props {
   onSearch: (searchText: string) => void;
@@ -28,16 +30,19 @@ const SearchingCard = ({ onSearch }: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const FoodSearch = useRef<HTMLInputElement>(null);
   const btnRef = useRef<HTMLDivElement>(null);
-
   const filteredItems = Store((state) => state.filteredItems);
+  const addToCart = Store((state) => state.addToCart); // Get addToCart from Zustand store
 
+  const handleAddToCart = (item: CartItem) => {
+    addToCart(item); // Add item to the cart
+  };
   const handleSearch = () => {
     const searchText = FoodSearch.current?.value || "";
     onSearch(searchText);
   };
 
   return (
-    <>
+    <Box>
       <Box ref={btnRef} onClick={onOpen}>
         <ImSearch color={colors.mainBrown} size={15} />
       </Box>
@@ -81,9 +86,29 @@ const SearchingCard = ({ onSearch }: Props) => {
                         {item.FoodName}
                       </Text>
                     </HStack>
-                    <Text color={colors.mainYello} fontWeight="600">
-                      ${item.price.toFixed(2)}
-                    </Text>
+                    <VStack whiteSpace="wrap">
+                      <Text
+                        fontSize="lg"
+                        color={colors.mainYello}
+                        fontWeight="600"
+                      >
+                        ${item.price}
+                      </Text>
+                      <Button
+                        p={2}
+                        color={colors.black}
+                        onClick={() =>
+                          handleAddToCart({
+                            image: item.image,
+                            FoodName: item.FoodName,
+                            price: item.price,
+                            quantity: 1,
+                          })
+                        }
+                      >
+                        Add
+                      </Button>
+                    </VStack>
                   </Box>
                 ))
               ) : (
@@ -95,7 +120,7 @@ const SearchingCard = ({ onSearch }: Props) => {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
-    </>
+    </Box>
   );
 };
 
