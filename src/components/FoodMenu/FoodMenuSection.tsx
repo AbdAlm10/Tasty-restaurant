@@ -18,7 +18,7 @@ import FoodMenuTap from "./FoodMenuTap";
 import Meal from "./Meal";
 
 const FoodMenuSection = () => (
-  <Box bg={colors.beige} p={5}>
+  <Box id="food-menu" bg={colors.beige} p={5}>
     <Center>
       <VStack
         w={{ base: "95%", md: "80%" }}

@@ -1,15 +1,23 @@
-import { Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import colors from "../../assets/colors/colors";
 
 interface Props {
   children: string;
+  onClick?: () => void;
 }
 
-const NavBarPageTitles = ({ children }: Props) => {
+const NavBarPageTitles = ({ children, onClick }: Props) => {
   return (
-    <Text ml={4} color={colors.mainBrown} whiteSpace="nowrap" fontWeight="700">
-      {children}
-    </Text>
+    <Box onClick={onClick}>
+      <Text
+        ml={4}
+        color={colors.mainBrown}
+        whiteSpace="nowrap"
+        fontWeight="700"
+      >
+        {children}
+      </Text>
+    </Box>
   );
 };
 

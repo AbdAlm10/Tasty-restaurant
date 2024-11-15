@@ -9,6 +9,13 @@ import SearchingCard from "../SearchingCard";
 import ShoppingCard from "../ShoppingCard";
 import NavbarDrawer from "./Drawer/NavbarDrawer";
 
+export const handleClick = () => {
+  const section = document.getElementById("food-menu");
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 const NavBar = () => {
   const itemsTotal = Store((state) => state.itemsTotal);
   const setSearchText = Store((state) => state.searchFoods);
@@ -38,8 +45,8 @@ const NavBar = () => {
           ml={{ base: 0, md: "50px" }}
           src={logo}
           alt="Logo"
-          w={{ base: "75px", md: "100px" }}
-          h={{ base: "40px", md: "55px" }}
+          w={{ base: "75px", md: "70px" }}
+          h={{ base: "40px", md: "45px" }}
         />
 
         <Show above="md">
@@ -47,9 +54,11 @@ const NavBar = () => {
             <Link to={"/"}>
               <NavBarPageTitles>Home</NavBarPageTitles>
             </Link>
-            <Link to={"FoodMenu/"}>
-              <NavBarPageTitles>Food Menu</NavBarPageTitles>
-            </Link>
+
+            <NavBarPageTitles onClick={() => handleClick()}>
+              Food Menu
+            </NavBarPageTitles>
+
             <Link to={"LatestBlog/"}>
               <NavBarPageTitles>Latest Blog</NavBarPageTitles>
             </Link>

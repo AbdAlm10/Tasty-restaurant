@@ -1,22 +1,25 @@
-import { Text } from "@chakra-ui/react";
+import { Text, Box } from "@chakra-ui/react";
 
 interface Props {
   children: string;
+  onCLick?: () => void;
 }
 
-const DrawerPageName = ({ children }: Props) => {
+const DrawerPageName = ({ children, onCLick }: Props) => {
   return (
-    <Text
-      transition="all 0.4s ease"
-      _hover={{
-        transform: "translateX(10px)",
-        transitionDuration: "0.6s",
-      }}
-      fontSize="20px"
-      mb={2}
-    >
-      {children}
-    </Text>
+    <Box onClick={onCLick}>
+      <Text
+        transition="all 0.4s ease"
+        _hover={{
+          transform: "translateX(10px)",
+          transitionDuration: "0.6s",
+        }}
+        fontSize="20px"
+        mb={2}
+      >
+        {children}
+      </Text>
+    </Box>
   );
 };
 

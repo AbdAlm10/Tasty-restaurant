@@ -24,6 +24,7 @@ import {
 import DrawerPageName from "./DrawerPageName";
 import ContactBoxContainer from "./ContactBoxContainer";
 import { Link } from "react-router-dom";
+import { handleClick } from "../NavBar";
 
 const NavbarDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -53,9 +54,11 @@ const NavbarDrawer = () => {
               <Link to={"/"}>
                 <DrawerPageName>Home</DrawerPageName>
               </Link>
-              <Link to={"FoodMenu/"}>
-                <DrawerPageName>Food Menu</DrawerPageName>
-              </Link>
+
+              <DrawerPageName onCLick={() => handleClick()}>
+                Food Menu
+              </DrawerPageName>
+
               <Link to={"LatestBlog/"}>
                 <DrawerPageName>Latest Blog</DrawerPageName>
               </Link>
