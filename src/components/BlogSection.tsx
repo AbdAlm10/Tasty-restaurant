@@ -19,7 +19,7 @@ import colors from "../assets/colors/colors";
 import BlogPosts from "../data/BlogPosts";
 import SectionsTitle from "./SectionsTitle";
 
-const BlogSection = () => {
+const BlogSection = ({ itmes = 3 }: { itmes: number }) => {
   return (
     <VStack mb={10}>
       <SectionsTitle
@@ -27,12 +27,13 @@ const BlogSection = () => {
         title={"Latest News"}
         description={"Our Latest Foods News"}
       />
-      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={7}>
-        {BlogPosts.map((item, index) => (
+      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={5}>
+        {BlogPosts.slice(0, itmes).map((item, index) => (
           <GridItem key={index}>
             <Card
               alignItems="center"
               mt={5}
+              mb={5}
               overflow="hidden"
               h="auto"
               minH="450px"

@@ -1,14 +1,13 @@
 import { Box } from "@chakra-ui/react";
-import PopularFood from "../components/PopularFood";
-import Slide from "../components/Slide";
 import colors from "../assets/colors/colors";
+import BlogSection from "../components/BlogSection";
+import FoodMenuSection from "../components/FoodMenu/FoodMenuSection";
+import Gallery from "../components/Gallery";
 import Offers from "../components/Offers";
 import OurTeam from "../components/OurTeam";
-import FoodMenuSection from "../components/FoodMenu/FoodMenuSection";
+import PopularFood from "../components/PopularFood";
 import Rating from "../components/Rating";
-import BlogSection from "../components/BlogSection";
-import Gallery from "../components/Gallery";
-import Footer from "../components/Footer";
+import Slide from "../components/Slide";
 
 const HomePage = () => {
   return (
@@ -20,9 +19,8 @@ const HomePage = () => {
         <OurTeam />
         <FoodMenuSection />
         <Rating />
-        <BlogSection />
+        <BlogSection itmes={3} />
         <Gallery />
-        <Footer />
       </Box>
     </>
   );
