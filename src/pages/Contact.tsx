@@ -1,19 +1,14 @@
 import { Box, GridItem, HStack, SimpleGrid } from "@chakra-ui/react";
+import { FaClock, FaPhoneAlt } from "react-icons/fa";
+import { MdEmail, MdPlace } from "react-icons/md";
 import colors from "../assets/colors/colors";
 import ContactUsContainer from "../components/ContactUsContainer";
-import { MdEmail, MdPlace } from "react-icons/md";
-import { FaClock, FaPhoneAlt } from "react-icons/fa";
+import ContactSendSection from "../components/ContactSendSection";
 
 const Contact = () => {
   return (
-    <Box
-      alignItems="center"
-      justifyContent="center"
-      display="flex"
-      p={10}
-      bg={colors.beige}
-    >
-      <HStack>
+    <Box alignItems="center" justifyContent="center" bg={colors.beige}>
+      <HStack p={10}>
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={7}>
           <GridItem>
             <ContactUsContainer
@@ -45,6 +40,7 @@ const Contact = () => {
           </GridItem>
         </SimpleGrid>
       </HStack>
+      <ContactSendSection />
     </Box>
   );
 };
