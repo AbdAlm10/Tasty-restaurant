@@ -7,7 +7,12 @@ import ContactSendSection from "../components/ContactSendSection";
 
 const Contact = () => {
   return (
-    <Box alignItems="center" justifyContent="center" bg={colors.beige}>
+    <Box
+      display="block"
+      alignItems="center"
+      justifyContent="center"
+      bg={colors.beige}
+    >
       <HStack p={10}>
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={7}>
           <GridItem>

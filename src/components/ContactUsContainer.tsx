@@ -21,6 +21,7 @@ const ContactUsContainer = ({ icon, title, description }: Props) => {
     <Card
       borderRadius="30px"
       bg="white"
+      h="100%"
       border="1px solid"
       borderColor={colors.mainYello}
     >
@@ -42,7 +43,11 @@ const ContactUsContainer = ({ icon, title, description }: Props) => {
           </Box>
         </Center>
         <VStack my={5}>
-          <Heading fontSize="25" color={colors.black}>
+          <Heading
+            maxW={{ base: "auto", lg: "170px" }}
+            fontSize="25"
+            color={colors.black}
+          >
             {title}
           </Heading>
           <Text color="gray">{description}</Text>

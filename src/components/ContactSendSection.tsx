@@ -12,7 +12,7 @@ import colors from "../assets/colors/colors";
 
 const ContactSendSection = () => {
   return (
-    <SimpleGrid mt="75px" columns={{ base: 1, md: 2 }} spacing={5}>
+    <SimpleGrid mt="50px" columns={{ base: 1, md: 2 }} spacing={5}>
       <GridItem>
         <Image
           src={contact}
@@ -21,7 +21,7 @@ const ContactSendSection = () => {
         />
       </GridItem>
       <GridItem p={5}>
-        <Box borderRadius="20px" bg="white" p={10} mt={10}>
+        <Box borderRadius="20px" bg="white" p={10}>
           <Heading color={colors.black} fontSize="30">
             Get in Touch
           </Heading>
