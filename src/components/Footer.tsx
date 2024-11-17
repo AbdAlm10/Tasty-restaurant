@@ -30,7 +30,6 @@ const Footer = () => {
           justifyContent="center"
           p={5}
           columns={{ base: 1, md: 3, lg: 3 }}
-          mt={5}
           borderRadius="20px"
           bg={colors.mainYello}
           w={{ base: "80%", md: "90%", lg: "100%" }}
