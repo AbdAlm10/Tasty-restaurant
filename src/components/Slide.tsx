@@ -8,7 +8,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { motion } from "motion/react";
-import { useEffect, useState } from "react";
+import useSlide from "../hooks/useSlide";
 import colors from "../assets/colors/colors";
 import burgar from "../assets/images/FastFood/FastFood1.png";
 import rize from "../assets/images/FastFood/FastFood2.png";
@@ -18,7 +18,6 @@ import pizza from "../assets/images/Pizza/pizza.png";
 import OrderButton from "./OrderButton";
 
 const Slide = () => {
-  const [index, setIndex] = useState(0);
   const slider = [
     { src: pizza, text: "Seasons Pizza Italian Style" },
     { src: burgar, text: "Burger King with multiple toppings" },
@@ -26,13 +25,7 @@ const Slide = () => {
     { src: pasta, text: "Tomato pasta with ment" },
   ];
 
-  // Change image every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % slider.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [slider.length]);
+  const { currentIndex, currentItem } = useSlide(slider, 5000);
 
   return (
     <Box
@@ -45,7 +38,7 @@ const Slide = () => {
       backgroundSize="cover"
     >
       <motion.div
-        key={index}
+        key={currentIndex}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -68,7 +61,7 @@ const Slide = () => {
                 color={"white"}
                 fontSize={{ base: 40, md: 60, lg: 65, xl: 80 }}
               >
-                {slider[index].text}
+                {currentItem.text}
               </Heading>
               <Box display="inline-block" mt={7}>
                 <OrderButton
@@ -83,7 +76,7 @@ const Slide = () => {
 
           <Show above="lg">
             <Image
-              src={slider[index].src}
+              src={currentItem.src}
               h="400px"
               maxW="450px"
               my={20}
