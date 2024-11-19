@@ -41,13 +41,15 @@ const NavBar = () => {
         <Hide above="md">
           <NavbarDrawer />
         </Hide>
-        <Image
-          ml={{ base: 0, md: "50px" }}
-          src={logo}
-          alt="Logo"
-          w={{ base: "75px", md: "70px" }}
-          h={{ base: "40px", md: "45px" }}
-        />
+        <Link to="/">
+          <Image
+            ml={{ base: 0, md: "50px" }}
+            src={logo}
+            alt="Logo"
+            w={{ base: "75px", md: "70px" }}
+            h={{ base: "40px", md: "45px" }}
+          />
+        </Link>
 
         <Show above="md">
           <HStack spacing={{ md: 5, lg: 10 }}>
