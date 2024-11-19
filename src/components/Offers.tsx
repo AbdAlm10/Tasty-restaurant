@@ -2,13 +2,14 @@ import { Box, Image, SimpleGrid, GridItem } from "@chakra-ui/react";
 import image from "../assets/images/countDownBG.png";
 import timerThumb from "../assets/images/timerThumb.png";
 import CountDown from "./CountDown";
+import OrderButton from "./OrderButton";
+import colors from "../assets/colors/colors";
 
 const Offers: React.FC = () => {
   const targetDate = new Date("2026-11-31T23:59:59");
 
   return (
     <Box
-      w="100%"
       h={{ base: "650px", md: "800px", lg: "550px" }}
       display="flex"
       justifyContent="center"
@@ -25,6 +26,9 @@ const Offers: React.FC = () => {
 
         <GridItem>
           <CountDown date={targetDate} />
+          <Box justifySelf="center" mt={5} ml={{ base: 0, lg: 8 }}>
+            <OrderButton BG={colors.mainYello} color="white" />
+          </Box>
         </GridItem>
       </SimpleGrid>
     </Box>
