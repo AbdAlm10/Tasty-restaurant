@@ -52,12 +52,12 @@ const PopularFood = () => {
             >
               <Image src={item.src} boxSize={style.image.bigImage} />
               <Box mt="6">
-                <Heading fontSize={style.text.midHeading}>{item.title}</Heading>
+                <Heading fontSize={style.text.midText}>{item.title}</Heading>
                 <Box mt={2}>
                   <Text color="gray">{item.description}</Text>
                   <Text
                     fontWeight={style.Weight.dark}
-                    fontSize={style.text.midHeading}
+                    fontSize={style.text.midText}
                     color={colors.mainYello}
                   >
                     {item.price}

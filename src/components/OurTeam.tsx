@@ -41,10 +41,7 @@ const OurTeam = () => {
             >
               <CardBody p={0}>
                 <VStack spacing={2} my="6" fontWeight={style.Weight.light}>
-                  <Heading
-                    color={colors.black}
-                    fontSize={style.text.midHeading}
-                  >
+                  <Heading color={colors.black} fontSize={style.text.midText}>
                     {chef.name}
                   </Heading>
                   <Text color="gray">{chef.role}</Text>

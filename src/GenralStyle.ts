@@ -4,7 +4,9 @@ const style = {
     largeRadius: "20px",
   },
   text: {
-    midHeading: "20",
+    largText: "25",
+    midText: "20",
+    smallText: "10",
   },
   image: {
     bigImage: "40",

@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { FaQuoteLeft } from "react-icons/fa6";
 import colors from "../assets/colors/colors";
+import style from "../GenralStyle";
 
 interface Props {
   text: string;
@@ -38,7 +39,11 @@ const CommentsContainer = (props: Props) => {
     >
       <CardBody>
         <FaQuoteLeft size={60} color="#d5d5d5" />
-        <Text fontSize={25} fontWeight={600} color={colors.black}>
+        <Text
+          fontSize={style.text.largText}
+          fontWeight={style.Weight.light}
+          color={colors.black}
+        >
           {props.text}
         </Text>
       </CardBody>
@@ -48,14 +53,14 @@ const CommentsContainer = (props: Props) => {
             src={props.userImageSrc}
             w={responseSize.HeightAndWidth}
             h={responseSize.HeightAndWidth}
-            borderRadius="50%"
+            borderRadius="full"
           />
           <VStack alignItems="start" spacing={0}>
             <Heading fontSize={responseSize.FontSize.name}>
               {props.name}
             </Heading>
             <Text
-              fontWeight="500"
+              fontWeight={style.Weight.light}
               color="gray"
               fontSize={responseSize.FontSize.userName}
             >
