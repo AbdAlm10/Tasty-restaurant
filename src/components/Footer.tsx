@@ -126,6 +126,12 @@ const Footer = () => {
         </SimpleGrid>
       </HStack>
       <Divider orientation="horizontal" />
+
+      <HStack p={1}>
+        <Text color="gray">
+          Copyright © 2024 Tasty Inc. All rights reserved.
+        </Text>
+      </HStack>
     </VStack>
   );
 };

@@ -11,10 +11,10 @@ import {
 } from "@chakra-ui/react";
 import { FaUserCircle } from "react-icons/fa";
 import { MdCategory } from "react-icons/md";
+import { Link } from "react-router-dom";
 import colors from "../assets/colors/colors";
 import BlogPosts from "../data/BlogPosts";
 import SectionsTitle from "./SectionsTitle";
-import { Link } from "react-router-dom";
 
 const BlogSection = ({ itmes = 3 }: { itmes: number }) => {
   return (
