@@ -15,6 +15,7 @@ import { FaFacebookF, FaLinkedinIn } from "react-icons/fa6";
 import Chefs from "../data/Chefs";
 import CustomizableButton from "./CustomizableButton";
 import SectionsTitle from "./SectionsTitle";
+import style from "../GenralStyle";
 
 const OurTeam = () => {
   return (
@@ -35,12 +36,15 @@ const OurTeam = () => {
               overflow="hidden"
               key={index}
               textAlign="center"
-              borderRadius="20px"
+              borderRadius={style.radius.largeRadius}
               my={{ base: 5, md: 3, lg: 10 }}
             >
               <CardBody p={0}>
-                <VStack spacing={2} my="6" fontWeight="600">
-                  <Heading color={colors.black} fontSize={20}>
+                <VStack spacing={2} my="6" fontWeight={style.Weight.light}>
+                  <Heading
+                    color={colors.black}
+                    fontSize={style.text.midHeading}
+                  >
                     {chef.name}
                   </Heading>
                   <Text color="gray">{chef.role}</Text>
