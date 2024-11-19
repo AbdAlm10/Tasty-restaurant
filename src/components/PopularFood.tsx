@@ -16,14 +16,14 @@ import colors from "../assets/colors/colors";
 import foodItems from "../data/FoodItems";
 import useLike from "../hooks/useLike";
 import SectionsTitle from "./SectionsTitle";
-import Store, { CartItem } from "../store"; // Import Zustand store
+import Store, { CartItem } from "../store";
+import style from "../GenralStyle";
 
 const PopularFood = () => {
   const { toggleLike, likedItems } = useLike();
-  const addToCart = Store((state) => state.addToCart); // Get addToCart from Zustand store
-
+  const addToCart = Store((state) => state.addToCart);
   const handleAddToCart = (item: CartItem) => {
-    addToCart(item); // Add item to the cart
+    addToCart(item);
   };
 
   return (
@@ -38,7 +38,11 @@ const PopularFood = () => {
         spacing={{ base: 0, md: 5 }}
       >
         {foodItems.slice(0, 4).map((item, index) => (
-          <Card key={index} my={{ base: 5, md: 3, lg: 10 }}>
+          <Card
+            key={index}
+            my={{ base: 5, md: 3, lg: 10 }}
+            borderRadius={style.radius.smallRadius}
+          >
             <CardBody
               display="flex"
               flexDirection="column"
@@ -46,12 +50,16 @@ const PopularFood = () => {
               textAlign="center"
               height="200px"
             >
-              <Image src={item.src} boxSize={40} />
-              <Box mt="6" fontWeight="600">
-                <Heading fontSize={20}>{item.title}</Heading>
+              <Image src={item.src} boxSize={style.image.bigImage} />
+              <Box mt="6">
+                <Heading fontSize={style.text.midHeading}>{item.title}</Heading>
                 <Box mt={2}>
                   <Text color="gray">{item.description}</Text>
-                  <Text fontWeight="700" fontSize={20} color={colors.mainYello}>
+                  <Text
+                    fontWeight={style.Weight.dark}
+                    fontSize={style.text.midHeading}
+                    color={colors.mainYello}
+                  >
                     {item.price}
                   </Text>
                 </Box>

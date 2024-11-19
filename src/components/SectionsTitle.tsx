@@ -9,8 +9,10 @@ interface Props {
 
 const SectionsTitle = ({ title, description, marginTop }: Props) => {
   return (
-    <VStack mt={marginTop} fontWeight="bold" fontSize={20}>
-      <Text color={colors.mainYello}>{title}</Text>
+    <VStack mt={marginTop} fontWeight="bold">
+      <Text fontSize={20} color={colors.mainYello}>
+        {title}
+      </Text>
       <Heading color={colors.black}>{description}</Heading>
     </VStack>
   );
