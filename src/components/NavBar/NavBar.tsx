@@ -52,18 +52,19 @@ const NavBar = () => {
         <Show above="md">
           <HStack spacing={{ md: 5, lg: 10 }}>
             <Link to={"/"}>
-              <NavBarPageTitles>Home</NavBarPageTitles>
+              <NavBarPageTitles title={"Home"} />
             </Link>
 
-            <NavBarPageTitles onClick={() => handleClick()}>
-              Food Menu
-            </NavBarPageTitles>
+            <NavBarPageTitles
+              title={"Food Menu"}
+              onClick={() => handleClick()}
+            />
 
             <Link to={"LatestBlog/"}>
-              <NavBarPageTitles>Latest Blog</NavBarPageTitles>
+              <NavBarPageTitles title={"Latest Blog"} />
             </Link>
             <Link to={"Contact/"}>
-              <NavBarPageTitles>Contact</NavBarPageTitles>
+              <NavBarPageTitles title={"Contact"} />
             </Link>
           </HStack>
         </Show>

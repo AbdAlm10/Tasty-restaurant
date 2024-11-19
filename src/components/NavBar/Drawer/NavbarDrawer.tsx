@@ -55,9 +55,7 @@ const NavbarDrawer = () => {
                 <DrawerPageName>Home</DrawerPageName>
               </Link>
 
-              <DrawerPageName onCLick={() => handleClick()}>
-                Food Menu
-              </DrawerPageName>
+              <DrawerPageName onCLick={handleClick}>Food Menu</DrawerPageName>
 
               <Link to={"LatestBlog/"}>
                 <DrawerPageName>Latest Blog</DrawerPageName>
