@@ -16,7 +16,7 @@ import {
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import { ImSearch } from "react-icons/im";
 import colors from "../assets/colors/colors";
@@ -31,14 +31,20 @@ const SearchingCard = ({ onSearch }: Props) => {
   const FoodSearch = useRef<HTMLInputElement>(null);
   const btnRef = useRef<HTMLDivElement>(null);
   const filteredItems = Store((state) => state.filteredItems);
-  const addToCart = Store((state) => state.addToCart); // Get addToCart from Zustand store
+  const searchFoods = Store((state) => state.searchFoods);
+  const addToCart = Store((state) => state.addToCart);
+
+  useEffect(() => {
+    searchFoods("");
+  }, [searchFoods]);
 
   const handleAddToCart = (item: CartItem) => {
-    addToCart(item); // Add item to the cart
+    addToCart(item);
   };
+
   const handleSearch = () => {
     const searchText = FoodSearch.current?.value || "";
-    onSearch(searchText);
+    onSearch(searchText); // Trigger search when text changes
   };
 
   return (
