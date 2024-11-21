@@ -16,7 +16,7 @@ const OrderButton = ({ ...style }: Props) => {
       <Button
         onClick={handleClick}
         _hover={{ bg: style.BG }}
-        _active={style.active}
+        _active={{ bg: style.BG }}
         color={style.color}
         bg={style.BG}
         w={style.width}

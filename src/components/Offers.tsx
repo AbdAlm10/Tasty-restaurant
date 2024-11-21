@@ -10,7 +10,6 @@ const Offers: React.FC = () => {
 
   return (
     <Box
-      h={{ base: "650px", md: "800px", lg: "550px" }}
       display="flex"
       justifyContent="center"
       backgroundImage={image}
@@ -26,8 +25,13 @@ const Offers: React.FC = () => {
 
         <GridItem>
           <CountDown date={targetDate} />
-          <Box justifySelf="center" mt={5} ml={{ base: 0, lg: 8 }}>
-            <OrderButton BG={colors.mainYello} color="white" />
+          <Box justifySelf="center" my={7} ml={{ base: 0, lg: 8 }}>
+            <OrderButton
+              BG={colors.mainYello}
+              color="white"
+              width="200px"
+              active={{ bg: colors.mainYello }}
+            />
           </Box>
         </GridItem>
       </SimpleGrid>
