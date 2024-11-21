@@ -13,9 +13,9 @@ import pizza6 from "../assets/images/Pizza/Pizza6.png";
 
 import pasta from "../assets/images/Pasta/pasta.png";
 import pasta2 from "../assets/images/Pasta/pasta2.png";
-import pasta3 from "../assets/images/Pasta/pasta3.png";
-import pasta4 from "../assets/images/Pasta/pasta4.png";
-import pasta5 from "../assets/images/Pasta/pasta5.png";
+import pasta3 from "../assets/images/Pasta/Pasta3.png";
+import pasta4 from "../assets/images/Pasta/Pasta4.png";
+import pasta5 from "../assets/images/Pasta/Pasta5.png";
 import pasta6 from "../assets/images/Pasta/Pasta6.png";
 
 import drink1 from "../assets/images/Drinks/drink1.png";
