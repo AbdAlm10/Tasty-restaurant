@@ -5,10 +5,10 @@ import FastFood4 from "../assets/images/FastFood/FastFood4.png";
 import FastFood5 from "../assets/images/FastFood/FastFood5.png";
 import FastFood6 from "../assets/images/FastFood/FastFood6.png";
 import pizza from "../assets/images/Pizza/pizza.png";
-import pizza2 from "../assets/images/Pizza/pizza2.png";
+import pizza2 from "../assets/images/Pizza/pizza.png";
 import pizza3 from "../assets/images/Pizza/pizza3.png";
 import pizza4 from "../assets/images/Pizza/pizza4.png";
-import pizza5 from "../assets/images/Pizza/pizza5.png";
+import pizza5 from "../assets/images/Pizza/Pizza5.png";
 import pizza6 from "../assets/images/Pizza/Pizza6.png";
 
 import pasta from "../assets/images/Pasta/pasta.png";
