@@ -123,14 +123,18 @@ const NewsPage = () => {
           </VStack>
         </GridItem>
 
-        <VStack spacing={5} p={5} alignItems="start" maxW="700px">
+        <VStack spacing={3} p={5} alignItems="start" maxW="700px">
           <Heading fontSize="2xl">Leave a comments</Heading>
           <HStack w="100%">
             <Input bg="white" placeholder="your Name" />
             <Input bg="white" placeholder="your Email" />
           </HStack>
           <Input bg="white" placeholder="Write a comment" />
-          <Button bg={colors.mainYello} color="white">
+          <Button
+            _hover={{ bg: colors.mainYello }}
+            bg={colors.mainYello}
+            color="white"
+          >
             Send
           </Button>
         </VStack>

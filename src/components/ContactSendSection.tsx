@@ -6,11 +6,23 @@ import {
   Heading,
   Input,
   Button,
+  Alert,
+  AlertIcon,
 } from "@chakra-ui/react";
 import contact from "../assets/images/contactThumb2_1.png";
 import colors from "../assets/colors/colors";
+import { useState } from "react";
+import style from "../GenralStyle";
 
 const ContactSendSection = () => {
+  const [submit, setSubmit] = useState(false);
+
+  const handleSubmit = () => {
+    setSubmit(true);
+    setTimeout(() => {
+      setSubmit(false);
+    }, 5000);
+  };
   return (
     <SimpleGrid mt="50px" columns={{ base: 1, md: 2 }} spacing={5}>
       <GridItem>
@@ -34,6 +46,7 @@ const ContactSendSection = () => {
               <Input placeholder="Write Your Message Here" />
             </GridItem>
             <Button
+              onClick={handleSubmit}
               bg={colors.mainYello}
               color="white"
               _hover={{ bg: colors.mainYello }}
@@ -42,6 +55,16 @@ const ContactSendSection = () => {
             </Button>
           </SimpleGrid>
         </Box>
+        {submit && (
+          <Alert
+            status="success"
+            borderRadius={style.radius.largeRadius}
+            mt={5}
+          >
+            <AlertIcon />
+            Your message has been sent successfully
+          </Alert>
+        )}
       </GridItem>
     </SimpleGrid>
   );
