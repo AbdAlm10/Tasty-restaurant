@@ -27,7 +27,9 @@ const FoodMenuSection = () => (
         borderRadius={20}
         p={{ base: 5, lg: 10 }}
       >
-        <SectionsTitle title="Food Menu" description="Fresheat Foods Menu" />
+        <Box textAlign="center">
+          <SectionsTitle title="Food Menu" description="Fresheat Foods Menu" />
+        </Box>
 
         <Tabs variant="unstyled" color={colors.black}>
           <Center>

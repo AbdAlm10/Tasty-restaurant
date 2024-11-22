@@ -25,7 +25,12 @@ const Offers: React.FC = () => {
 
         <GridItem>
           <CountDown date={targetDate} />
-          <Box justifySelf="center" my={7} ml={{ base: 0, lg: 8 }}>
+          <Box
+            justifyContent="center"
+            display="flex"
+            my={7}
+            ml={{ base: 0, lg: 8 }}
+          >
             <OrderButton
               BG={colors.mainYello}
               color="white"
