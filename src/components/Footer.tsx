@@ -22,18 +22,16 @@ import FooterLinks from "./FooterLinks";
 
 const Footer = () => {
   return (
-    <VStack bg="white" h="450px" p={10}>
+    <VStack bg="white" p={2}>
       <Box justifyContent="center" display="flex">
         <SimpleGrid
+          mt={5}
           spacing={{ base: 5, md: 10, lg: 20 }}
-          alignItems="center"
-          justifyContent="center"
           p={5}
           columns={{ base: 1, md: 3, lg: 3 }}
           borderRadius="20px"
           bg={colors.mainYello}
           w={{ base: "80%", md: "90%", lg: "100%" }}
-          h={"auto"}
         >
           <GridItem>
             <FooterInfoContainer
@@ -58,19 +56,17 @@ const Footer = () => {
           </GridItem>
         </SimpleGrid>
       </Box>
-      <HStack color={colors.black} my={10}>
+      <HStack color={colors.black} my={5}>
         <SimpleGrid columns={{ base: 1, md: 3, lg: 4 }} spacing={10}>
           <GridItem>
-            <Box>
-              <Box>
-                <Image src={logo} w="150px" h="100px" />
-              </Box>
+            <VStack textAlign="center">
+              <Image src={logo} w="150px" h="100px" />
               <Text fontWeight="500" my={3} fontSize="15px" maxW="250px">
                 The best restaurant that combines civilization and ancient
                 times, as it serves ancient food and also cares about keeping up
                 with the times.
               </Text>
-            </Box>
+            </VStack>
           </GridItem>
           <GridItem>
             <FooterLinks
@@ -103,7 +99,7 @@ const Footer = () => {
               title={"Contact Us"}
               links={
                 <>
-                  <Box my={3} fontWeight="500">
+                  <Box my={2} fontWeight="500">
                     <Text>Monday - Friday: 8am - 4pm</Text>
                     <Text>Saturday: 8am - 12am</Text>
                   </Box>
@@ -127,7 +123,7 @@ const Footer = () => {
       </HStack>
       <Divider orientation="horizontal" />
 
-      <HStack p={1}>
+      <HStack>
         <Text color="gray">
           Copyright © 2024 Tasty Inc. All rights reserved.
         </Text>
