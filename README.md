@@ -5,13 +5,11 @@ A modern, responsive restaurant web app that lets customers browse the menu, sea
 [Live Demo →](https://tasty-restaurant-abdulrahmans-projects-8a950f9f.vercel.app/)
 
 ## 📸 Screenshots
-(menu.png)
-<image-card alt="Homepage" src="screenshots/home.png" ></image-card>
-<image-card alt="Homepage" src="screenshots/comments.png" ></image-card>
-<image-card alt="Menu with search" src="screenshots/menu.png" ></image-card>
-<image-card alt="Cart drawer" src="screenshots/card.png" ></image-card>
-<image-card alt="Cart drawer" src="screenshots/blog.png" ></image-card>
-<image-card alt="Cart drawer" src="screenshots/card2.png" ></image-card>
+![Homepage](./home.png)
+![Comments](./comments.png)
+![Menu with search](./menu.png)
+![Cart drawer](./card.png)
+![Blog](./blog.png)
 
 ## ✨ Features
 
