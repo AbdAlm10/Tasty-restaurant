@@ -1,50 +1,30 @@
-# React + TypeScript + Vite
+# Tasty Restaurant
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive restaurant web app that lets customers browse the menu, search for dishes, add items to a cart, and enjoy a smooth ordering experience.
 
-Currently, two official plugins are available:
+[Live Demo →](https://tasty-restaurant-abdulrahmans-projects-8a950f9f.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📸 Screenshots
+<image-card alt="Homepage" src="screenshots/home.png" ></image-card>
+<image-card alt="Homepage" src="screenshots/comments.png" ></image-card>
+<image-card alt="Menu with search" src="screenshots/menu.png" ></image-card>
+<image-card alt="Cart drawer" src="screenshots/card.png" ></image-card>
+<image-card alt="Cart drawer" src="screenshots/blog.png" ></image-card>
+<image-card alt="Cart drawer" src="screenshots/card2.png" ></image-card>
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Dynamic menu with categories and rich dish cards  
+- Real-time shopping cart with quantity controls & total calculation  
+- Fast client-side search to find your favorite meals instantly  
+- Beautiful, accessible UI with dark mode support  
+- Mobile-first responsive design  
+- Lightweight global state management
 
-- Configure the top-level `parserOptions` property like this:
+## 🚀 Tech Stack
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **Framework:** React (Vite)  
+- **UI Library:** Chakra UI  
+- **State Management:** Zustand  
+- **Styling:** Emotion (via Chakra)  
+- **Deployment:** Vercel
